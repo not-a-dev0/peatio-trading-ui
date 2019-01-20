@@ -9,6 +9,7 @@ class MarketsController < ApplicationController
     else
       response.assert_success!
       @data = JSON.load(response.body).deep_symbolize_keys
+      @funds = @data.fetch(:my_accounts)
     end
   rescue Faraday::Error::TimeoutError => e
     (attempts_left -= 1) > 0 ? retry : raise
@@ -31,4 +32,5 @@ private
     url = URI.join(url, '/markets/')
     URI.join(url, params[:market_id] + '.json')
   end
+
 end
