@@ -1,0 +1,87 @@
+<div id="my_orders_funds" class="my-orders-tabcontent" style="display: none;">
+  <div id="account_summary">
+    <div class="my-orders-subheader">
+      <ul>
+        <li style="width: 50px;">Coin</li>
+        <li class="my-orders-subheading" style="width: 200px;">Total Balance</li>
+        <li class="my-orders-subheading" style="width: 200px;">Locked Balance</li>
+      </ul>
+      <div class="total-funds">
+        <span id="total_assets" data-title="Summary">R1.00</span>
+      </div>
+    </div>
+    <div class="panel-default" style="height: calc(100% - 25px);">
+      <div style="padding: 2px 0px; max-height: 100%; overflow: hidden; outline: none;" class="panel-body-content" tabindex="3">
+        <table class="table funds-table">
+          <tbody>
+            <% @funds.first(3).each do |fund| %>
+              <tr class="btc ">
+                <td class="account-symbol" style="width: 50px;">
+                  <div class="currency-logo" style="background-image: url(http://icons.iconarchive.com/icons/cjdowner/cryptocurrency-flat/512/Bitcoin-BTC-icon.png);"></div>
+                  <div><%= fund[:currency][:code] %></div>
+                </td>
+                <td class="account-balance" style="width: 200px; padding-left: 29px;">
+                  <span class="amount" data-title="Amount"><%= fund[:amount] %></span>
+                </td>
+                <td class="account-locked-balance" style="width: 200px; padding-left: 29px;">
+                  <span class="locked" data-title="Freeze"><%= fund[:locked] %></span>
+                </td>
+              </tr>
+            <% end %>
+            <% @funds.drop(3).each do |fund| %>
+              <tr class="btc hide">
+                <td class="account-symbol" style="width: 50px;">
+                  <div class="currency-logo" style="background-image: url(http://icons.iconarchive.com/icons/cjdowner/cryptocurrency-flat/512/Bitcoin-BTC-icon.png);"></div>
+                  <div><%= fund[:currency][:code] %></div>
+                </td>
+                <td class="account-balance" style="width: 200px; padding-left: 29px;">
+                  <span class="amount" data-title="Amount"><%= fund[:amount] %></span>
+                </td>
+                <td class="account-locked-balance" style="width: 200px; padding-left: 29px;">
+                  <span class="locked" data-title="Freeze"><%= fund[:locked] %></span>
+                </td>
+              </tr>
+            <% end %> 
+            <!-- <tr class="eth hide">
+              <td class="account-symbol" style="width: 50px;">
+                <div class="currency-logo" style="background-image: url(https://cdn-ak.f.st-hatena.com/images/fotolife/m/moneygamex/20171016/20171016113446.png);"></div>
+                <div>ETH</div>
+              </td>
+              <td class="account-balance" style="width: 200px; padding-left: 29px;">
+                <span class="amount" data-title="Amount">0.00000</span>
+              </td>
+              <td class="account-locked-balance" style="width: 200px; padding-left: 29px;">
+                <span class="locked" data-title="Freeze">0.00000</span>
+              </td>
+            </tr>
+            <tr class="zar ">
+              <td class="account-symbol" style="width: 50px;">
+                <div class="currency-logo" style="background-image: url(https://cdn.countryflags.com/thumbs/south-africa/flag-round-250.png);"></div>
+                <div>ZAR</div>
+              </td>
+              <td class="account-balance" style="width: 200px; padding-left: 29px;">
+                <span class="amount" data-title="Amount">0.00000</span>
+              </td>
+              <td class="account-locked-balance" style="width: 200px; padding-left: 29px;">
+                <span class="locked" data-title="Freeze">0.00000</span>
+              </td>
+            </tr> -->
+          </tbody>
+        </table>
+        <div style="width: 100%; float: left; margin-top: 10px;" class="text-center">
+          <span class="view_all_accounts" data-hide-text="Hide Other" data-show-text="View All" href="#">
+          View All
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="ascrail2003" class="nicescroll-rails" style="width: 5px; z-index: 100; cursor: default; position: absolute; top: 0px; left: -5px; height: 0px; display: none;">
+    <div style="position: relative; top: 0px; float: right; width: 5px; height: 0px; background-color: rgb(66, 66, 66); border: none; background-clip: padding-box; border-radius: 5px;">      
+    </div>
+  </div>
+  <div id="ascrail2003-hr" class="nicescroll-rails" style="height: 5px; z-index: 100; top: -5px; left: 0px; position: absolute; cursor: default; display: none;">
+    <div style="position: absolute; top: 0px; height: 5px; width: 0px; background-color: rgb(66, 66, 66); border: none; background-clip: padding-box; border-radius: 5px;">
+    </div>
+  </div>
+</div>

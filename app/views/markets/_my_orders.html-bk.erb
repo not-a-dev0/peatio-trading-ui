@@ -1,0 +1,36 @@
+<div id="my_orders_wrapper" class="has-left-dropdown">
+  <div id="my_orders" class="panel panel-default">
+    <div class="panel-body panel-body-head" id="my_orders_header">
+      <ul>
+        <li class="my-orders-tab active" onclick="openMyOrdersTab(event, 'my_orders_open_orders')" id="my_orders_default_tab">Open Orders</li>
+        <!--<li class="my-orders-tab" onclick="openMyOrdersTab(event, 'my_orders_order_history')">Order History</li>-->
+        <li class="my-orders-tab" onclick="openMyOrdersTab(event, 'my_orders_funds')">Funds</li>
+      </ul>
+    </div>
+    <div id="my_orders_open_orders" class="my-orders-tabcontent" style="display: block;">
+      <div class="my-orders-subheader">
+        <ul>
+          <li>Date and Time</li>
+          <li class="my-orders-subheading">Type</li>
+          <li class="my-orders-subheading"><%= @data.fetch(:current_market).fetch(:bid_unit).upcase %> <%= t('.price') %></li>
+          <li class="my-orders-subheading"><%= @data.fetch(:current_market).fetch(:ask_unit).upcase %> <%= t('.amount') %></li>
+          <li class="my-orders-subheading" style="border-right: none !important;"><%= @data.fetch(:current_market).fetch(:bid_unit).upcase %> <%= t('.volume') %></li>
+        </ul>
+      </div>
+      <div class="panel-body panel-body-content" style="height: calc(100% - 25px); padding-top: 2px !important; padding-bottom: 2px !important; overflow: hidden; outline: none;" tabindex="2">
+        <div class="empty-row">
+          <p style="color: #ffffff; padding-top: 20px; font-size: 13px;">You have no open orders.</p>
+        </div>
+        <table id="my_orders_table" class="table">
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+    <div id="ascrail2002" class="nicescroll-rails" style="width: 5px; z-index: 1; cursor: default; position: absolute; top: 55px; left: 708px; height: 122px; display: none;">
+      <div style="position: relative; top: 0px; float: right; width: 5px; height: 0px; background-color: rgb(66, 66, 66); border: none; background-clip: padding-box; border-radius: 5px;"></div>
+    </div>
+    <div id="ascrail2002-hr" class="nicescroll-rails" style="height: 5px; z-index: 1; top: 172px; left: 0px; position: absolute; cursor: default; display: none;">
+      <div style="position: absolute; top: 0px; height: 5px; width: 0px; background-color: rgb(66, 66, 66); border: none; background-clip: padding-box; border-radius: 5px;"></div>
+    </div>
+  </div>
+</div>

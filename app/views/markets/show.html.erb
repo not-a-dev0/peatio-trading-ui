@@ -1,24 +1,212 @@
-<audio preload="preload" id="success-fx">
-  <source src="<%= audio_path('success.mp3') %>" />
-</audio>
+    <audio preload="preload" id="success-fx">
+      <source src="/trading-ui-assets/success-eda8f32410b1be48c2255871fa9672429d25db90773b3ab2732247a7d7acb738.mp3">
+    </audio>
+    <audio preload="preload" id="warning-fx">
+      <source src="/trading-ui-assets/warning-cf7680d11484070ce6cd64930ee8acd98f43e71234ba2244274e11c51b9f5f80.mp3">
+    </audio>
+    <!--***********Header Start*******************-->
+    <%= render partial: 'header' %>
+    <!--***********Header End*******************-->
+    <div class="container-fluid" style="padding: 0px;">
+      <div class="col-lg-12">
+        <div class="row">
+          <%= render partial: 'market_list' %>
+          
+          <div class="col-lg-6" style="height:500px; padding:0px 2px;">
+            <div class="col-md-12" style="background: #171e2e;height: 300px;padding:0px;">
+                <!-- <div id="chart" class="tv-external-tools__html5-chart" style="height: 100%;">
+                  <iframe src="https://charting-library.tradingview.com/?lang=tv-external-tools__html5-chart" frameborder="0" style="width: 100%; height: 100%;" allowfullscreen=""></iframe>
+                </div> -->
+                <!-- TradingView Widget BEGIN -->
+                <!-- <div class="tradingview-widget-container">
+                  <div id="tradingview_4e4d2"></div>
+                  <div class="tradingview-widget-copyright"><a href="https://in.tradingview.com/symbols/BITFINEX-BTCUSD/" rel="noopener" target="_blank"></a></div>
+                  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                  <script type="text/javascript">
+                  new TradingView.widget(
+                  {
+                  "width": 600,
+                  "height": 329,
+                  "symbol": "BITFINEX:BTCUSD",
+                  "interval": "D",
+                  "timezone": "Etc/UTC",
+                  "theme": "Dark",
+                  "style": "1",
+                  "locale": "in",
+                  "toolbar_bg": "#f1f3f6",
+                  "enable_publishing": false,
+                  "hide_legend": true,
+                  "hide_side_toolbar": false,
+                  "allow_symbol_change": true,
+                  "save_image": false,
+                  "container_id": "tradingview_4e4d2"            
+                }
+                  );
+                  </script>
+                </div> -->
+                <!-- TradingView Widget BEGIN -->
+                <div class="tradingview-widget-container">
+                  <div id="technical-analysis"></div>
+                  <div class="tradingview-widget-copyright"><a href="https://in.tradingview.com/symbols/AAPL/" rel="noopener" target="_blank"></a></div>
+                  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                  <script type="text/javascript">
+                  new TradingView.widget(
+                  {
+                    "container_id": "technical-analysis",
+                    "width":600,
+                    "height":329,
+                    "symbol": "BITFINEX:BTCUSD",
+                    "interval": "D",
+                    "timezone": "exchange",
+                    "theme": "Dark",
+                    "style": "1",
+                    "toolbar_bg": "#f1f3f6",
+                    "withdateranges": false,
+                    "hide_side_toolbar": false,
+                    "hide_legend": true,
+                    "allow_symbol_change": true,
+                    "save_image": false,
+                    "studies": [
+                      "MASimple@tv-basicstudies"
+                    ],
+                  }
+                  );
+                  </script>
+                </div>
+<!-- TradingView Widget END -->
+                <!-- TradingView Widget END -->
+            </div>
+            <%= render partial: 'depths' %>
+            
+          </div>
 
-<audio preload="preload" id="warning-fx">
-  <source src="<%= audio_path('warning.mp3') %>" />
-</audio>
+          <%= render partial: 'order_book' %>
+          
+              
 
-<%= render partial: 'header' %>
-<div id="wrap">
-  <div class="content">
-    <%= render partial: 'market_trades' %>
-    <%= render partial: 'market_list' %>
-    <%= render partial: 'candlestick' %>
-    <%= render partial: 'range_switch' %>
-    <%= render partial: 'indicator_switch' %>
-    <%= render partial: 'order_book' %>
-    <%= render partial: 'depths' %>
-    <%= render partial: 'ticker' %>
-    <%= render partial: 'ask_entry', locals: { market: @data.fetch(:current_market) } %>
-    <%= render partial: 'bid_entry', locals: { market: @data.fetch(:current_market) } %>
-    <%= render partial: 'my_orders' %>
-  </div>
-</div>
+          <%= render partial: 'market_trades' %>
+          <!-- <div id="market_trades" class="col-lg-2" style="height:500px; padding:0px 2px; overflow-x: hidden; outline: none;">
+            <div class="col-md-12 trade-panel" style="background: #171e2e;height: 500px;padding:0px;">
+              
+            </div>
+          </div> -->
+        </div>
+        <div class="row" style="padding:5px 0px;">
+          <%= render partial: 'my_orders' %>
+          <div class="col-lg-3" style="height:380px; padding:0px 2px;">
+            <div class="col-md-12" style="background: #171e2e;height: 380px;padding:0px;">
+              <div class="responsive-tabs">
+                <ul class="nav nav-tabs custom-nav-tabs" role="tablist">
+                  <li role="presentation" class="active">
+                      <a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">Trade Bots</a>
+                  </li>
+                  <li role="presentation" class="">
+                      <a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">Signals</a>
+                  </li>
+                  <li role="presentation" class="">
+                      <a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab">Market Trend</a>
+                  </li>
+                </ul>
+                <div id="tabs-content" class="tab-content panel-group">
+                  <div id="tab1" role="tabpanel" class="tab-pane active panel-collapse collapse in" aria-labelledby="heading1">
+                    <table class="table custom-market-tbl">
+                      <thead>
+                        <tr>
+                          <th scope="col-6">Name</th>
+                          <th scope="col-3">Pair</th>
+                          <th scope="col-3">Act.Orders</th>
+                        </tr>
+                      </thead>
+                    </table>
+                  </div>
+                  <div id="tab2" role="tabpanel" class="tab-pane panel-collapse collapse" aria-labelledby="heading2">
+                    <table class="table custom-market-tbl">
+                      <thead>
+                        <tr>
+                          <th scope="col-6">Name</th>
+                          <th scope="col-3">Pair</th>
+                          <th scope="col-3">Act.Orders</th>
+                        </tr>
+                      </thead>
+                    </table>
+                  </div>
+                  <div id="tab3" role="tabpanel" class="tab-pane panel-collapse collapse" aria-labelledby="heading3">
+                    <table class="table custom-market-tbl">
+                      <thead>
+                        <tr>
+                          <th scope="col-xs-6">Name</th>
+                          <th scope="col-xs-3">Pair</th>
+                          <th scope="col-xs-3">Act.Orders</th>
+                        </tr>
+                      </thead>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4" style="height:380px; padding:0px 2px;">
+            <div class="col-md-12" style="background: #171e2e;height: 380px;padding:0px;">
+              <div class="responsive-tabs">
+                <ul class="nav nav-tabs custom-nav-tabs" role="tablist">
+                  <li role="presentation" class="active">
+                      <a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">Limit</a>
+                  </li>
+                  <li role="presentation" class="">
+                      <a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">Market</a>
+                  </li>
+                  <li role="presentation" class="">
+                      <a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab">Stop-limit</a>
+                  </li>
+                  <li role="presentation" class="">
+                      <a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab">Trailing stop</a>
+                  </li>
+                  <li role="presentation" class="">
+                      <a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab">Take profit</a>
+                  </li>
+                </ul>
+                <div id="tabs-content" class="tab-content panel-group">
+                  <div id="tab1" role="tabpanel" class="tab-pane active panel-collapse collapse in" aria-labelledby="heading1">
+                    <div class="col-md-6 px-5">
+                      <%= render partial: 'bid_entry', locals: { market: @data.fetch(:current_market) } %>
+                      
+                    </div>
+                    <div class="col-md-6 px-5">
+                      <%= render partial: 'ask_entry', locals: { market: @data.fetch(:current_market) } %>
+                      
+                    </div>
+                  </div>
+                </div>               
+                <div id="tab2" role="tabpanel" class="tab-pane panel-collapse collapse" aria-labelledby="heading2">
+                  <table class="table custom-market-tbl">
+                    <thead>
+                      <tr>
+                        <th scope="col">2</th>
+                        <th scope="col">Pair/BTC</th>
+                        <th scope="col">Last Price</th>
+                        <th scope="col">Vol.</th>
+                        <th scope="col">Change,%</th>
+                      </tr>
+                    </thead>
+                  </table>
+                </div>
+                <div id="tab3" role="tabpanel" class="tab-pane panel-collapse collapse" aria-labelledby="heading3">
+                  <table class="table custom-market-tbl">
+                    <thead>
+                      <tr>
+                        <th scope="col">3</th>
+                        <th scope="col">Pair/BTC</th>
+                        <th scope="col">Last Price</th>
+                        <th scope="col">Vol.</th>
+                        <th scope="col">Change,%</th>
+                      </tr>
+                    </thead>
+                  </table>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

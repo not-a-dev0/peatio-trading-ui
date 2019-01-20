@@ -1,50 +1,397 @@
-<div id="order_book" class="panel panel-default">
-  <div class="panel-body panel-body-head">
-    <div id="order_book_header" class="row">
-      <div class="col-xs-12 col-left">
-        <table class="table">
-          <thead>
-            <tr>
-              <th class="amount text-right col-xs-10">
-                <%= t('.amount') %>
-              </th>
-              <th class="volume text-right col-xs-7">
-                <%= t('.volume') %>
-              </th>
-              <th class="price text-right col-xs-7">
-                <%= t('.bid') %>
-              </th>
-            </tr>
-          </thead>
-        </table>
-      </div>
-      <div class="col-xs-12">
-        <table class="table table-head">
-          <thead>
-            <tr>
-              <th class="price text-right col-xs-7">
-                <%= t('.ask') %>
-              </th>
-              <th class="volume text-right col-xs-7">
-                <%= t('.volume') %>
-              </th>
-              <th class="amount text-right col-xs-10">
-                <%= t('.amount') %>
-              </th>
-            </tr>
-          </thead>
-        </table>
+<div class="col-lg-2" id="order_book" style="height:500px; padding:0px 2px;">
+  <div class="col-md-12" style="background: #171e2e;height: 500px;padding:0px;">
+    <div id="order_book_header" class="panel-group mlr-5">
+      <p class="text-white mt-5 fs-11">ORDER BOOK</p>
+      <table class=" custom-market-tbl">
+        <thead>
+          <tr>
+            <th scope="col">Price(BTC)</th>
+            <th scope="col">Amount(USD)</th>
+            <th scope="col"  class="text-right">Total(BTC)</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <div id="order_book_body" class="mlr-5" tabindex="1">
+      <!-- <table class="custom-market-tbl"  cellspacing="0" cellpadding="0">
+        <tbody>
+          <tr>
+            <td class="price text-down">
+              <div style="display: block;">
+                0.0011195
+              </div>
+            </td>
+            <td class="volume" title="22.448228">
+              <div style="display: block;">
+                82.08
+              </div>
+            </td>
+            <td class="time">
+              15:05:33
+            </td>
+          </tr>
+          <tr id="market-trade-145" class="">
+            <td class="price text-down">
+              <div style="display: block;">
+                57522
+              </div>
+            </td>
+            <td class="volume">
+              <div style="display: block;">
+                155.05
+              </div>
+            </td>
+            <td class="time">
+              15:04:50
+            </td>
+          </tr>
+          <tr id="market-trade-144" class="">
+            <td class="price text-down">
+              <div style="display: block;">
+                59000
+              </div>
+            </td>
+            <td class="volume">
+              <div style="display: block;">
+                123.0
+              </div>
+            </td>
+            <td class="time">
+              15:04:33
+            </td>
+          </tr>
+          <tr id="market-trade-143" class="">
+            <td class="price text-down">
+              <div style="display: block;">
+                59000
+              </div>
+            </td>
+            <td class="volume">
+              <div style="display: block;">
+                22.02
+              </div>
+            </td>
+            <td class="time">
+              15:04:04
+            </td>
+          </tr>
+          <tr id="market-trade-142" class="">
+            <td class="price text-down">
+              <div style="display: block;">
+                61222
+              </div>
+            </td>
+            <td class="volume">
+              <div style="display: block;">
+                245.3
+              </div>
+            </td>
+            <td class="time">
+              15:03:26
+            </td>
+          </tr>
+          <tr id="market-trade-141" class="">
+            <td class="price text-down">
+              <div style="display: block;">
+                62000
+              </div>
+            </td>
+            <td class="volume">
+              <div style="display: block;">
+                42.35
+              </div>
+            </td>
+            <td class="time">
+              15:02:59
+            </td>
+          </tr>
+          <tr id="market-trade-140" class="">
+            <td class="price text-down">
+              <div style="display: block;">
+                61222
+              </div>
+            </td>
+            <td class="volume">
+              <div style="display: block;">
+                455
+              </div>
+            </td>
+            <td class="time">
+              15:02:27
+            </td>
+          </tr>
+
+        </tbody>
+      </table> -->
+      <table class="custom-market-tbl" cellspacing="0" cellpadding="0" id="table_orderbook_asks"></table>
+    </div>
+    <div id="ticker" class="mlr-5 ticker-container">
+      <div style="padding: 0; height: 40px;">
+        <div class="last">
+
+          <div id="ticker_last_price" style="font-size: 14px !important;" class="price text-up"><i class="fa fa-arrow-up"></i></div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="panel-body panel-body-content">
-    <div id="order_book_body" class="row">
-      <div class="col-xs-12 col-left">
-        <table class="table table-hover bids"></table>
-      </div>
-      <div class="col-xs-12">
-        <table class="table table-hover asks"></table>
+    <div id="order_book_body" class="mlr-5" tabindex="1">
+      <!-- <table class="custom-market-tbl"  cellspacing="0" cellpadding="0">
+        <tbody>
+          <tr>
+            <td class="price text-up">
+              <div style="display: block;">
+                0.0011195
+              </div>
+            </td>
+            <td class="volume" title="22.448228">
+              <div style="display: block;">
+                82.08
+              </div>
+            </td>
+            <td class="time">
+              15:05:33
+            </td>
+          </tr>
+          <tr id="market-trade-145" class="">
+            <td class="price text-up">
+              <div style="display: block;">
+                57522
+              </div>
+            </td>
+            <td class="volume">
+              <div style="display: block;">
+                155.05
+              </div>
+            </td>
+            <td class="time">
+              15:04:50
+            </td>
+          </tr>
+          <tr id="market-trade-144" class="">
+            <td class="price text-u">
+              <div style="display: block;">
+                59000
+              </div>
+            </td>
+            <td class="volume">
+              <div style="display: block;">
+                123.0
+              </div>
+            </td>
+            <td class="time">
+              15:04:33
+            </td>
+          </tr>
+          <tr id="market-trade-143" class="">
+            <td class="price text-up">
+              <div style="display: block;">
+                59000
+              </div>
+            </td>
+            <td class="volume">
+              <div style="display: block;">
+                22.02
+              </div>
+            </td>
+            <td class="time">
+              15:04:04
+            </td>
+          </tr>
+          <tr id="market-trade-142" class="">
+            <td class="price text-up">
+              <div style="display: block;">
+                61222
+              </div>
+            </td>
+            <td class="volume">
+              <div style="display: block;">
+                245.3
+              </div>
+            </td>
+            <td class="time">
+              15:03:26
+            </td>
+          </tr>
+          <tr id="market-trade-141" class="">
+            <td class="price text-up">
+              <div style="display: block;">
+                62000
+              </div>
+            </td>
+            <td class="volume">
+              <div style="display: block;">
+                42.35
+              </div>
+            </td>
+            <td class="time">
+              15:02:59
+            </td>
+          </tr>
+          <tr id="market-trade-140" class="">
+            <td class="price text-up">
+              <div style="display: block;">
+                61222
+              </div>
+            </td>
+            <td class="volume">
+              <div style="display: block;">
+                455
+              </div>
+            </td>
+            <td class="time">
+              15:02:27
+            </td>
+          </tr>
+
+        </tbody>
+      </table> -->
+      <table class="custom-market-tbl"  cellspacing="0" cellpadding="0" id="table_orderbook_bids"></table>
+    </div>
+
+    <!-- <div style="margin-top: 30px; height: 0px; overflow: hidden; outline: none;" class="panel-body panel-body-content orders" id="ask_tab" tabindex="4">
+      <div id="order_book_body">
+        <div>
+          <table class="table asks" id="table_orderbook_asks"></table>
+        </div>
       </div>
     </div>
+    <div id="ticker" class="panel panel-default ticker-container">
+      <div style="padding: 0; height: 40px;" class="panel-body">
+        <div class="last">
+          <div id="ticker_last_price" style="font-size: 16px !important;" class="price text-up">60022.000000</div>
+        </div>
+      </div>
+    </div>
+    <div class="panel-body panel-body-content orders" id="bid_tab" tabindex="5" style="height: 0px; overflow: hidden; outline: none;">
+      <div id="order_book_body">
+        <div>
+          <table class="table bids" id="table_orderbook_bids">
+            <tbody>
+              <tr data-order="0" data-price="60022.0" data-volume="0.004626" class="" style="background: linear-gradient(to left, rgba(83, 185, 135, 0.2) 22.7333%, transparent 0px) transparent;">
+                <td class="amount">
+                  <div style="display: block;">
+                    277
+                    <g>.661772</g>
+                  </div>
+                </td>
+                <td class="volume">
+                  <div style="display: block;">
+                    0
+                    <g>.004626</g>
+                  </div>
+                </td>
+                <td class="price text-up">
+                  <div style="display: block;">
+                    60022
+                    <g>.000000</g>
+                  </div>
+                </td>
+              </tr>
+              <tr data-order="1" data-price="57522.0" data-volume="0.004623" class="" style="background: linear-gradient(to left, rgba(83, 185, 135, 0.2) 22.7186%, transparent 0px) transparent;">
+                <td class="amount">
+                  <div style="display: block;">
+                    265
+                    <g>.924206</g>
+                  </div>
+                </td>
+                <td class="volume">
+                  <div style="display: block;">
+                    0
+                    <g>.004623</g>
+                  </div>
+                </td>
+                <td class="price text-up">
+                  <div style="display: block;">
+                    57522
+                    <g>.000000</g>
+                  </div>
+                </td>
+              </tr>
+              <tr data-order="2" data-price="50522.0" data-volume="0.005" class="" style="background: linear-gradient(to left, rgba(83, 185, 135, 0.2) 24.5712%, transparent 0px) transparent;">
+                <td class="amount">
+                  <div style="display: block;">
+                    252
+                    <g>.610000</g>
+                  </div>
+                </td>
+                <td class="volume">
+                  <div style="display: block;">
+                    0
+                    <g>.005000</g>
+                  </div>
+                </td>
+                <td class="price text-up">
+                  <div style="display: block;">
+                    50522
+                    <g>.000000</g>
+                  </div>
+                </td>
+              </tr>
+              <tr data-order="3" data-price="49000.0" data-volume="0.002" class="" style="background: linear-gradient(to left, rgba(83, 185, 135, 0.2) 9.82849%, transparent 0px) transparent;">
+                <td class="amount">
+                  <div style="display: block;">
+                    98
+                    <g>.000000</g>
+                  </div>
+                </td>
+                <td class="volume">
+                  <div style="display: block;">
+                    0
+                    <g>.002000</g>
+                  </div>
+                </td>
+                <td class="price text-up">
+                  <div style="display: block;">
+                    49000
+                    <g>.000000</g>
+                  </div>
+                </td>
+              </tr>
+              <tr data-order="4" data-price="48000.0" data-volume="0.004" class="" style="background: linear-gradient(to left, rgba(83, 185, 135, 0.2) 19.657%, transparent 0px) transparent;">
+                <td class="amount">
+                  <div style="display: block;">
+                    192
+                    <g>.000000</g>
+                  </div>
+                </td>
+                <td class="volume">
+                  <div style="display: block;">
+                    0
+                    <g>.004000</g>
+                  </div>
+                </td>
+                <td class="price text-up">
+                  <div style="display: block;">
+                    48000
+                    <g>.000000</g>
+                  </div>
+                </td>
+              </tr>
+              <tr data-order="5" data-price="20000.0" data-volume="0.0001" class="" style="background: linear-gradient(to left, rgba(83, 185, 135, 0.2) 0.491425%, transparent 0px) transparent;">
+                <td class="amount">
+                  <div style="display: block;">
+                    2
+                    <g>.000000</g>
+                  </div>
+                </td>
+                <td class="volume">
+                  <div style="display: block;">
+                    0
+                    <g>.000100</g>
+                  </div>
+                </td>
+                <td class="price text-up">
+                  <div style="display: block;">
+                    20000
+                    <g>.000000</g>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div> -->
   </div>
 </div>
+
+

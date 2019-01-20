@@ -1,0 +1,137 @@
+<div id="chart_header">
+          <ul id="range_switch" class="list-inline switch" data-x="60" style="display: block;">
+            <!--1 5 15 30 | 60 120 240 360 720 | 1440 4320 | 10080-->
+            <li class="text-center range-dropper" onclick="chartSelector(event, 'time')">
+              <div class="hand-point chart-switch" href="#" style="float: left; width: 100%;">
+                <span id="active_time">t</span>
+                <i class="chart-arrow-down" id="time_arrow_down"></i>
+                <i class="chart-arrow-up hide" id="time_arrow_up"></i>
+              </div>
+            </li>
+            <div id="time_choices" class="">
+              <li class="text-center">
+                <a class="hand-point chart-switch" href="#" data-x="1">
+                1m
+                </a>
+              </li>
+              <br>
+              <li class="text-center">
+                <a class="hand-point chart-switch" href="#" data-x="5">
+                5m
+                </a>
+              </li>
+              <br>
+              <li class="text-center">
+                <a class="hand-point chart-switch" href="#" data-x="15">
+                15m
+                </a>
+              </li>
+              <br>
+              <li class="text-center">
+                <a class="hand-point chart-switch" href="#" data-x="30">
+                30m
+                </a>
+              </li>
+              <br>
+              <li class="text-center">
+                <a class="hand-point chart-switch active" href="#" data-x="60">
+                1h
+                </a>
+              </li>
+              <br>
+              <li class="text-center">
+                <a class="hand-point chart-switch" href="#" data-x="120">
+                2h
+                </a>
+              </li>
+              <br>
+              <li class="text-center">
+                <a class="hand-point chart-switch" href="#" data-x="240">
+                4h
+                </a>
+              </li>
+              <br>
+              <li class="text-center">
+                <a class="hand-point chart-switch" href="#" data-x="360">
+                6h
+                </a>
+              </li>
+              <br>
+              <li class="text-center">
+                <a class="hand-point chart-switch" href="#" data-x="720">
+                12h
+                </a>
+              </li>
+              <br>
+              <li class="text-center">
+                <a class="hand-point chart-switch" href="#" data-x="1440">
+                1d
+                </a>
+              </li>
+              <br>
+              <li class="text-center">
+                <a class="hand-point chart-switch" href="#" data-x="4320">
+                3d
+                </a>
+              </li>
+              <br>
+              <li class="text-center">
+                <a class="hand-point chart-switch" href="#" data-x="10080">
+                1w
+                </a>
+              </li>
+              <br>
+            </div>
+          </ul>
+          
+          <div id="indicator_switch_wrapper" class="switch" style="display: block;">
+            <ul class="list-inline">
+              <li>
+                <ul id="type_switch" class="indicator_switch list-inline" data-x="candlestick">
+                  <li class="text-center type-dropper" onclick="chartSelector(event, 'type')">
+                    <span>Type</span>
+                    <i class="chart-arrow-down" id="type_arrow_down"></i>
+                    <i class="chart-arrow-up hide" id="type_arrow_up"></i>
+                  </li>
+                  <div id="type_choices" class="">
+                    <li class="text-center">
+                      <a class="hand-point active" data-x="candlestick" href="#">Candlestick</a>
+                    </li>
+                    <li class="text-center">
+                      <a class="hand-point" data-x="close" href="#">Line</a>
+                    </li>
+                  </div>
+                </ul>
+              </li>
+              <li>
+                <ul id="main_indicator_switch" class="indicator_switch list-inline" data-x="MA">
+                  <li class="text-center indicator-dropper" onclick="chartSelector(event, 'indicator')">
+                    <span>Overlay</span>
+                    <i class="chart-arrow-down" id="indicator_arrow_down"></i>
+                    <i class="chart-arrow-up hide" id="indicator_arrow_up"></i>
+                  </li>
+                  <div id="indicator_choices" class="">
+                    <li class="text-center">
+                      <a class="hand-point active" data-x="MA" href="#">MA</a>
+                    </li>
+                    <li class="text-center">
+                      <a class="hand-point" data-x="EMA" href="#">EMA</a>
+                    </li>
+                  </div>
+                </ul>
+              </li>
+              <li style="display: none !important;">
+                <ul id="indicator_switch" class="indicator_switch list-inline" data-x="MACD">
+                  <li class="text-center">
+                    <a class="hand-point active" data-x="MACD" href="#">MACD</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="chart-tabs">
+            <a class="chart-link active" onclick="openChart(event, 'candlestick')" id="default_chart_tab">Original</a>
+            <a class="chart-link" onclick="openChart(event, 'trading_view_wrapper')">TradingView</a>
+            <a class="chart-link" onclick="openChart(event, 'depths_wrapper')">Depth</a>
+          </div>
+        </div>

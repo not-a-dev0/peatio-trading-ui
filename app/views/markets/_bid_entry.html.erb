@@ -1,30 +1,68 @@
-<div id="bid_entry" class="panel panel-default entry-right">
-  <div class="panel-body">
-    <%= form_for 'order_bid', url: "/markets/#{market.fetch(:id)}/order_bids", remote: true, html: { class: 'new_order_bid', id: 'new_order_bid' } do |f| %>
-      <%= f.hidden_field :ord_type, value: 'limit' %>
-      <div class="input-group price">
-        <label class="input-group-addon"><%= t('.price') %></label>
-        <span class="label label-primary hint-price-disadvantage"></span>
-        <%= f.text_field :price, class: 'form-control' %>
-        <span class="input-group-addon"><%= market.fetch(:bid_unit).upcase %></span>
+<div id="bid_entry" class="panel-body p-0">
+  <p class="text-white mt-5">BUY BTC</p>
+  
+  <%= form_for 'order_bid', url: "/markets/#{market.fetch(:id)}/order_bids", remote: true, html: { class: 'new_order_bid', id: 'new_order_bid' } do |f| %>
+  <!-- <form class="new_order_bid" id="new_order_bid" action="/markets/usdbch/order_bids" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="✓"> -->
+    <%= f.hidden_field :ord_type, value: 'limit', name:"order_bid[ord_type]", id:"order_bid_ord_type" %>
+    <!-- <input value="limit" type="hidden" name="order_bid[ord_type]" id="order_bid_ord_type"> -->
+    <div class="input-group price custom-text">
+      <span class="label hint-price-disadvantage"></span>
+      <!-- <input class="form-control" type="text" name="order_bid[price]" id="order_bid_price"> -->
+      <%= f.text_field :price, class: 'form-control', name:"order_bid[price]", id:"order_bid_price" %>
+      <span class="input-group-addon">Amount USD</span>
+    </div>
+    <div class="input-group amount custom-text">
+      <!-- <input class="form-control" type="text" name="order_bid[origin_volume]" id="order_bid_origin_volume"> -->
+      <%= f.text_field :origin_volume, class: 'form-control', name:"order_bid[origin_volume]", id:"order_bid_origin_volume" %>
+      <span class="input-group-addon">Price BTC</span>
+    </div>
+    <!-- <label class="radio-inline text-white custom-radio">
+      <input type="radio" name="optradio">25%
+    </label>
+    <label class="radio-inline text-white custom-radio">
+      <input type="radio" name="optradio">50%
+    </label>
+    <label class="radio-inline text-white custom-radio">
+      <input type="radio" name="optradio">25%
+    </label>
+    <label class="radio-inline text-white custom-radio">
+      <input type="radio" name="optradio">100%
+    </label> -->
+    <div class="col-md-12">
+      <div class="row">
+        <p class="col-md-3 p-0">
+          <input type="radio" id="buy_rdo1" name="radio-group" class="custom-rdo">
+          <label for="buy_rdo1">25%</label>
+        </p>
+        <p class="col-md-3 p-0">
+          <input type="radio" id="buy_rdo2" name="radio-group" class="custom-rdo">
+          <label for="buy_rdo2">50%</label>
+        </p>
+        <p class="col-md-3 p-0">
+          <input type="radio" id="buy_rdo3" name="radio-group" class="custom-rdo">
+          <label for="buy_rdo3">25%</label>
+        </p>
+       
+        <p class="col-md-3 p-0">
+          <input type="radio" id="buy_rdo4" name="radio-group" class="custom-rdo">
+          <label for="buy_rdo4">100%</label>
+        </p>
       </div>
-      <div class="input-group amount">
-        <label class="input-group-addon"><%= t('.amount') %></label>
-        <%= f.text_field :origin_volume, class: 'form-control' %>
-        <span class="input-group-addon"><%= market.fetch(:ask_unit).upcase %></span>
-      </div>
-      <div class="input-group total">
-        <label class="input-group-addon"><%= t('.total') %></label>
-        <span class="label label-info hint-positions"></span>
-        <%= f.text_field :total, class: 'form-control' %>
-        <span class="input-group-addon"><%= market.fetch(:bid_unit).upcase %></span>
-      </div>
-      <%= render partial: 'balance', locals: { currency: market.fetch(:bid_unit).upcase } %>
-
-      <button class="btn btn-primary btn-block text-up" type="submit">
-        <%= t('.action', currency: @data.fetch(:current_market).fetch(:ask_unit).upcase) %>
-      </button>
-    <% end %>
-  </div>
-  <%= render partial: 'mask' %>
+    </div>
+    <div class="input-group total custom-text">
+      <span class="label hint-positions"></span>
+      <!-- <input class="form-control" type="text" name="order_bid[total]" id="order_bid_total"> -->
+      <%= f.text_field :total, class: 'form-control', name: "order_bid[total]", id:"order_bid_total" %>
+      <span class="input-group-addon">Total USD</span>
+    </div>
+    <!-- <div class="row row-tips">
+      <%#= render partial: 'balance', locals: { currency: market.fetch(:bid_unit).upcase } %>
+    </div> -->
+    <%= render partial: 'balance', locals: { currency: market.fetch(:bid_unit).upcase } %>
+    <!-- <button class="btn buy-btc-btn btn-block text-white" type="submit">Buy BTC
+    </button> -->
+    <%= f.submit "Buy BTC", class: "btn buy-btc-btn btn-block text-white" %>
+  <% end %>  
+  <!-- </form>  --> 
+  <%#= render partial: 'mask' %>
 </div>

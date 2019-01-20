@@ -1,37 +1,46 @@
-<header class="navbar navbar-default navbar-static-top" role="navigation">
-  <div class="container-fluid">
-    <ul id="menu" class="nav navbar-nav navbar-left">
-      <a class="navbar-brand" href="/">
-        <%= ENV.fetch('TITLE') %>
-        <%= @data.fetch(:current_market).fetch(:ask_unit).upcase %>/<%= @data.fetch(:current_market).fetch(:bid_unit).upcase %>
-      </a>
-
-      <p class="navbar-text">
-        <span data-title="<%= t('.vol') %>">
-          <span class="vol"></span>
-        </span>
-        <span data-title="<%= t('.high') %>">
-          <span class="high"></span>
-        </span>
-        <span data-title="<%= t('.low') %>">
-          <span class="low"></span>
-        </span>
-        <span data-title="<%= t('.change') %>">
-          <span class="change"></span>
-        </span>
-      </p>
-    </ul>
-
-    <ul class="nav navbar-nav navbar-right">
-      <% if @data[:current_member] %>
-        <%= render partial: 'account_summary' %>
-        <%= render partial: 'settings' %>
-      <% else %>
-        <p class="navbar-text">
-          <%= t('markets.mask.warning', frontend_url: ENV['FRONTEND_ROOT_URL']).html_safe %>
+<header class="navbar navbar-default navbar-static-top" role="navigation" style="height: 40px; width: 100%; background-color: rgb(38, 45, 51); margin-bottom: 5px; border: none;">
+      <div class="container-fluid">
+        <ul style="height: 40px;" id="menu" class="nav navbar-nav navbar-left">
+          <a class="navbar-brand" style="margin: 0 !important;" href="#">
+            <%#= image_tag 'ovexio.png' , :style => "height: 38px; margin: -4px 40px 0 20px;"%>
+            <p>TRADETITANS</p>
+          </a>
+        </ul>
+        <p style="margin-right: 365px; text-align: right; float: right; height: 40px; margin-top: 0px;" class="navbar-text">
+          <span class="info-container">
+          <span class="info-name">24h High</span><br>
+          <span class="high info-value"></span>
+          </span>
+          <span class="info-container">
+          <span class="info-name">24h Low</span><br>
+          <span class="low info-value"></span>
+          </span>
+          <span class="info-container">
+          <span class="info-name">24h Change</span><br>
+          <span class="change info-value"><span class="text-up"></span></span>
+          </span>
+          <span class="info-container">
+          <span class="info-name">24h Volume</span><br>
+          <span class="vol info-value"></span>
+          </span>
         </p>
-      <% end %>
-      <%= render partial: 'language' %>
-    </ul>
-  </div>
-</header>
+        <ul class="nav navbar-nav navbar-right">
+          <div>
+            <div onclick="marketBtn()" class="market-btn"></div>
+            <div class="market-name-container">
+              <a class="market-name">
+              <span><%= @data.fetch(:current_market).fetch(:ask_unit).upcase %> / <%= @data.fetch(:current_market).fetch(:bid_unit).upcase %></span>
+              <i class="arrow-down" id="arrow_down"></i>
+              <i class="arrow-up" id="arrow_up"></i>
+              </a>
+            </div>
+            <%#= render partial: 'market_list' %>
+          </div>
+          <div class="account-summary-container">
+            <a href="#"><i class="fa fa-user" style="margin-right: 5px;"></i></a>
+            <span> | </span>
+            <a href="<%= generate_ui_url('signout') %>">Sign out</a>
+          </div>
+        </ul>
+      </div>
+    </header>

@@ -1,59 +1,67 @@
-<div id="market_list_wrapper" class="has-right-dropdown">
-  <% if @data.fetch(:market_groups).count > 1 %>
-    <div class="dropdown-wrapper">
-      <ul class="dropdown-menu">
-        <li>
-          <a class="active" data-name="all" href="javascript:;">
-            <%= t('.all_html') %>
-          </a>
-        </li>
-        <% @data[:market_groups].each do |name| %>
-          <li>
-            <a data-name="<%= name %>" href="javascript:;">
-              <%= t('.ccy_html', currency: name.upcase) %>
-            </a>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <div id="market_list">
-    <div class="panel panel-default panel-width">
-      <div class="panel-body panel-body-head">
-        <table class="table">
-          <thead>
-            <tr>
-              <th class="col-xs-7">
-                <span class="name"><%= t('.all') %></span>
-              </th>
-              <th class="col-xs-4 text-right price">
-                <%= t('.price') %>
-              </th>
-              <th class="col-xs-5 text-right change">
-                <%= t('.change') %>
-              </th>
-            </tr>
-          </thead>
-        </table>
+
+
+<div id="market_list_wrapper" class="col-lg-2" style="height:500px; padding:0px 2px;">
+  <div id="market_list" class="col-md-12" style="background: #171e2e;height: 500px;padding:0px;">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="input-group col-md-12">
+          <input type="text" class="form-control market-input" placeholder="Market" / style="">
+          <span class="input-group-btn">
+              <button class="btn custom-market-btn" type="button">
+                  <i class="glyphicon glyphicon-search"></i>
+              </button>
+          </span>
+        </div>
       </div>
-      <div class="panel-body panel-body-content">
-        <table class="table table-hover markets all">
-          <tbody>
-            <% @data.fetch(:markets).each do |market| %>
-              <tr class="markets-toggle" id="market-list-<%= market.fetch(:id) %>" data-quote-unit="<%= market.fetch(:bid_unit) %>" data-base-unit="<%= market.fetch(:ask_unit) %>" data-market="<%= market[:id] %>">
-                <td class="col-xs-4 name">
-                  <%= link_to market.fetch(:name), '/trading/' + market.fetch(:id) %>
-                </td>
-                <td class="col-xs-15 price">
-                  <%= market.fetch(:ticker).fetch(:last) %>
-                </td>
-                <td class="col-xs-5 change">
-                  | +0.00%
-                </td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
+    </div>
+    <div class="responsive-tabs">
+      <ul class="nav nav-tabs custom-nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+            <a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">BTC</a>
+        </li>
+      </ul>
+      <div id="tabs-content" class="tab-content panel-group">
+          <div id="tab1" role="tabpanel" class="tab-pane active panel-collapse collapse in" aria-labelledby="heading1">
+            <table class="table custom-market-tbl">
+              <thead>
+                <tr>
+                  <th scope="col-xs-1">*</th>
+                  <th scope="col-xs-3">Pair/BTC</th>
+                  <th scope="col-xs-3">Last Price</th>
+                  <th scope="col-xs-3">Vol.</th>
+                  <th scope="col-xs-2">Change,%</th>
+                </tr>
+              </thead>
+            </table>
+
+
+
+
+          </div>
+          <div class="panel-body panel-body-content">
+          <table class="custom-market-tbl">
+            <tbody>
+              <% @data.fetch(:markets).each do |market| %>
+                <tr class="markets-toggle" id="market-list-<%= market.fetch(:id) %>" data-quote-unit="<%= market.fetch(:bid_unit) %>" data-base-unit="<%= market.fetch(:ask_unit) %>" data-market="<%= market[:id] %>">
+                  <td class="col-xs-1">
+                  </td>
+                  <td class="col-xs-3 name">
+                    <%= link_to market.fetch(:name), '/trading/' + market.fetch(:id) %>
+                  </td>
+                  <td class="col-xs-3 price">
+                    <%= market.fetch(:ticker).fetch(:last) %>
+                  </td>
+                  <td class="col-xs-3 volume">
+                    <%#=  %>
+                  </td>
+                  <td class="col-xs-2 change">
+                    | +0.00%
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>

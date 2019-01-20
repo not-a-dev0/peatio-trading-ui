@@ -1,0 +1,36 @@
+<div style="background-color: rgb(38, 45, 51); border: none; font-family: arial; min-height: 200px; border-radius: 0px; right: 293px; bottom: 0px; z-index: 1; height: 304px !important; width: 291px !important; display: none;" id="market_bid_entry" class="panel panel-default entry-right market-order-form">
+          <div class="panel-body" style="padding: 45px 20px 20px 20px;">
+            <p style="padding: 0px 0 10px 5px; font-size: 14px; font-weight: bold;">
+              Buy BTC
+            </p>
+            <form class="new_order_bid" id="new_order_bid" action="https://www.ovex.io/markets/btczar/order_bids" accept-charset="UTF-8" data-remote="true" method="post">
+              <input name="utf8" type="hidden" value="✓">
+              <input value="market" type="hidden" name="market_order_bid[ord_type]" id="market_order_bid_ord_type">
+              <div class="input-group price" style="margin-bottom: 8px;">
+                <label class="input-group-addon">ZAR Price</label>
+                <span class="label label-primary hint-price-disadvantage"></span>
+                <input class="form-control" name="price" ,="" placeholder="Market Price" readonly="">
+                <!--<span class="input-group-addon">ZAR</span>-->
+              </div>
+              <div class="input-group amount" style="margin-bottom: 20px;">
+                <label class="input-group-addon">BTC Amount</label>
+                <input class="form-control" type="text" name="market_order_bid[origin_volume]" id="market_order_bid_origin_volume">
+                <!--<span class="input-group-addon">BTC</span>-->
+              </div>
+              <span>
+                <div class="row row-tips">
+                  <div class="col-xs-24 text-right">
+                    <span class="label label-info status-info"></span>
+                    <span class="label label-success status-success"></span>
+                    <span class="label label-danger status-danger"></span>
+                    <span class="current-balance number"></span>
+                    <span class="unit">ZAR</span>
+                  </div>
+                </div>
+              </span>
+              <button style="color: #ffffff; font-weight: bold; background-color: #53B987; border: none; border-radius: 0; margin-top: 14px;" class="btn btn-primary btn-block" type="submit">
+              Buy BTC
+              </button>
+            </form>
+          </div>
+        </div>
