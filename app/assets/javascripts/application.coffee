@@ -22,6 +22,13 @@
 #= require ./lib/ranger_connection
 
 
+#= require application-trading
+#= require bundle
+#= require charting_library.min
+#= require custom-script-trading
+#= require polyfills
+
+
 #= require highstock
 #= require_tree ./highcharts/
 
