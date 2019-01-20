@@ -2,6 +2,7 @@
 <html>
   <head>
     <title><%= ENV.fetch('METADATA_TITLE') %></title>
+    <meta name="viewport" content="width=device-width, intial-scale=1">
     <meta name="description" content="<%= ENV.fetch('METADATA_DESCRIPTION') %>">
     <meta name="keywords" content="<%= ENV.fetch('METADATA_KEYWORDS') %>">
     <meta name="csrf-param" content="authenticity_token" />
@@ -15,6 +16,7 @@
     <![endif]-->
     <%= javascript_include_tag "locales/#{I18n.locale}" %>
     <%= javascript_include_tag 'application' %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   </head>
-  <body><%= yield %></body>
+  <body style="background: #0f0f0f;"><%= yield %></body>
 </html>
