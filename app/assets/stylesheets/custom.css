@@ -1,0 +1,4264 @@
+.chatbro_data_tippy [data-tippy] {
+  position: absolute;
+  height: inherit;
+  width: inherit;
+  top: 0;
+  left: 0
+}
+
+.chatbro_data_tippy [data-tippy]:before,
+.chatbro_data_tippy [data-tippy]:after {
+  position: absolute;
+  display: block;
+  opacity: 0;
+  transition: all .18s ease-out;
+  font-family: sans-serif;
+  transform: translate3d(-50%, 0, 0);
+  transform-origin: top;
+  top: 100%;
+  left: 50%;
+  pointer-events: none;
+  font-weight: 100
+}
+
+.chatbro_data_tippy [data-tippy]:before {
+  content: attr(data-tippy);
+  color: #fff;
+  font-size: 13px;
+  background-color: #000;
+  z-index: 1;
+  padding: 3px 6px;
+  border-radius: 3px;
+  white-space: nowrap;
+  margin-top: 10px
+}
+
+.chatbro_data_tippy [data-tippy]:after {
+  content: '';
+  border: 5px solid transparent;
+  border-bottom-color: #000
+}
+
+.chatbro_data_tippy [data-tippy]:hover:before,
+.chatbro_data_tippy [data-tippy]:hover:after {
+  transform: translate3d(-50%, 0, 0)
+}
+
+.chatbro_data_tippy [data-tippy][data-tippy-pos]:before {
+  top: auto;
+  left: auto;
+  margin-top: auto;
+  transform: none
+}
+
+.chatbro_data_tippy [data-tippy][data-tippy-pos]:after {
+  top: auto;
+  left: auto;
+  margin-top: auto;
+  border-bottom-color: transparent;
+  transform: none
+}
+
+.chatbro_data_tippy [data-tippy][data-tippy-pos='up']:before,
+.chatbro_data_tippy [data-tippy][data-tippy-pos='up']:after,
+.chatbro_data_tippy [data-tippy][data-tippy-pos='down']:before,
+.chatbro_data_tippy [data-tippy][data-tippy-pos='down']:after {
+  left: 50%
+}
+
+.chatbro_data_tippy [data-tippy][data-tippy-pos='topLeft']:before,
+.chatbro_data_tippy [data-tippy][data-tippy-pos='topLeft']:after {
+  left: 50%
+}
+
+.chatbro_data_tippy [data-tippy][data-tippy-pos='topRight']:before,
+.chatbro_data_tippy [data-tippy][data-tippy-pos='topRight']:after {
+  left: 50%
+}
+
+.chatbro_data_tippy [data-tippy][data-tippy-pos='up']:before,
+.chatbro_data_tippy [data-tippy][data-tippy-pos='up']:after {
+  bottom: 100%;
+  transform: translate3d(-50%, 0, 0)
+}
+
+.chatbro_data_tippy [data-tippy][data-tippy-pos='topLeft']:before,
+.chatbro_data_tippy [data-tippy][data-tippy-pos='topLeft']:after {
+  bottom: 100%;
+  transform: translate3d(-15%, 0, 0)
+}
+
+.chatbro_data_tippy [data-tippy][data-tippy-pos='topRight']:before,
+.chatbro_data_tippy [data-tippy][data-tippy-pos='topRight']:after {
+  bottom: 100%;
+  transform: translate3d(-75%, 0, 0)
+}
+
+.chatbro_data_tippy [data-tippy][data-tippy-pos='up']:before,
+.chatbro_data_tippy [data-tippy][data-tippy-pos='topRight']:before,
+.chatbro_data_tippy [data-tippy][data-tippy-pos='topLeft']:before {
+  margin-bottom: 10px
+}
+
+.chatbro_data_tippy [data-tippy][data-tippy-pos='up']:after,
+.chatbro_data_tippy [data-tippy][data-tippy-pos='topRight']:after,
+.chatbro_data_tippy [data-tippy][data-tippy-pos='topLeft']:after {
+  border-top-color: #000;
+  border-bottom-color: transparent
+}
+
+.chatbro_data_tippy [data-tippy][data-tippy-pos='down']:before,
+.chatbro_data_tippy [data-tippy][data-tippy-pos='down']:after {
+  top: 100%;
+  transform: translate3d(-90%, 0, 0)
+}
+
+.chatbro_data_tippy [data-tippy][data-tippy-pos='down']:before {
+  margin-top: 10px
+}
+
+.chatbro_data_tippy [data-tippy][data-tippy-pos='down']:after {
+  border-bottom-color: #000;
+  border-top-color: transparent
+}
+
+.chatbro_data_tippy [data-tippy][data-tippy-pos='left']:before,
+.chatbro_data_tippy [data-tippy][data-tippy-pos='left']:after,
+.chatbro_data_tippy [data-tippy][data-tippy-pos='right']:before,
+.chatbro_data_tippy [data-tippy][data-tippy-pos='right']:after {
+  top: 50%
+}
+
+.chatbro_data_tippy [data-tippy][data-tippy-pos='left']:before,
+.chatbro_data_tippy [data-tippy][data-tippy-pos='left']:after {
+  right: 100%;
+  transform: translate3d(0, -50%, 0)
+}
+
+.chatbro_data_tippy [data-tippy][data-tippy-pos='left']:before {
+  margin-right: 10px
+}
+
+.chatbro_data_tippy [data-tippy][data-tippy-pos='left']:after {
+  border-left-color: #000
+}
+
+.chatbro_data_tippy [data-tippy][data-tippy-pos='right']:before,
+.chatbro_data_tippy [data-tippy][data-tippy-pos='right']:after {
+  left: 100%;
+  transform: translate3d(0, -50%, 0)
+}
+
+.chatbro_data_tippy [data-tippy][data-tippy-pos='right']:before {
+  margin-left: 10px
+}
+
+.chatbro_data_tippy [data-tippy][data-tippy-pos='right']:after {
+  border-right-color: #000
+}
+
+.chatbro_data_tippy [data-tippy]:hover:before,
+.chatbro_data_tippy [data-tippy]:hover:after {
+  opacity: 1
+}
+
+.chatbro_data_tippy [data-tippy][data-tippy-animate='slide']:before,
+.chatbro_data_tippy [data-tippy][data-tippy-animate='slide']:after {
+  transform: translate3d(-50%, -10px, 0)
+}
+
+.chatbro_data_tippy [data-tippy][data-tippy-animate='slide']:hover:before,
+.chatbro_data_tippy [data-tippy][data-tippy-animate='slide']:hover:after {
+  transform: translate3d(-50%, 0, 0)
+}
+
+.chatbro_data_tippy [data-tippy][data-tippy-pos='up'][data-tippy-animate='slide']:before,
+.chatbro_data_tippy [data-tippy][data-tippy-pos='up'][data-tippy-animate='slide']:after {
+  transform: translate3d(-50%, 10px, 0)
+}
+
+.chatbro_data_tippy [data-tippy][data-tippy-pos='down'][data-tippy-animate='slide']:before,
+.chatbro_data_tippy [data-tippy][data-tippy-pos='down'][data-tippy-animate='slide']:after {
+  transform: translate3d(-50%, -10px, 0)
+}
+
+.chatbro_data_tippy [data-tippy][data-tippy-pos='up'][data-tippy-animate='slide']:hover:before,
+.chatbro_data_tippy [data-tippy][data-tippy-pos='up'][data-tippy-animate='slide']:hover:after,
+.chatbro_data_tippy [data-tippy][data-tippy-pos='down'][data-tippy-animate='slide']:hover:before,
+.chatbro_data_tippy [data-tippy][data-tippy-pos='down'][data-tippy-animate='slide']:hover:after {
+  transform: translate3d(-50%, 0, 0)
+}
+
+.chatbro_data_tippy [data-tippy][data-tippy-pos='left'][data-tippy-animate='slide']:before,
+.chatbro_data_tippy [data-tippy][data-tippy-pos='left'][data-tippy-animate='slide']:after {
+  transform: translate3d(10px, -50%, 0)
+}
+
+.chatbro_data_tippy [data-tippy][data-tippy-pos='right'][data-tippy-animate='slide']:before,
+.chatbro_data_tippy [data-tippy][data-tippy-pos='right'][data-tippy-animate='slide']:after {
+  transform: translate3d(-10px, -50%, 0)
+}
+
+.chatbro_data_tippy [data-tippy][data-tippy-pos='left'][data-tippy-animate='slide']:hover:before,
+.chatbro_data_tippy [data-tippy][data-tippy-pos='left'][data-tippy-animate='slide']:hover:after,
+.chatbro_data_tippy [data-tippy][data-tippy-pos='right'][data-tippy-animate='slide']:hover:before,
+.chatbro_data_tippy [data-tippy][data-tippy-pos='right'][data-tippy-animate='slide']:hover:after {
+  transform: translate3d(0, -50%, 0)
+}
+
+.chatbro_data_tippy [data-tippy][data-tippy-animate='bubble']:before,
+.chatbro_data_tippy [data-tippy][data-tippy-animate='bubble']:after {
+  opacity: 1;
+  visibility: hidden
+}
+
+.chatbro_data_tippy [data-tippy][data-tippy-animate='bubble']:hover:before,
+.chatbro_data_tippy [data-tippy][data-tippy-animate='bubble']:hover:after {
+  visibility: visible
+}
+
+.chatbro_data_tippy [data-tippy][data-tippy-animate='bubble']:before {
+  -webkit-clip-path: circle(10% at 50% 0);
+  clip-path: circle(10% at 50% 0)
+}
+
+.chatbro_data_tippy [data-tippy][data-tippy-animate='bubble']:hover:before {
+  -webkit-clip-path: circle(100% at 50%);
+  clip-path: circle(100% at 50%)
+}
+
+.chatbro_data_tippy [data-tippy][data-tippy-pos='up'][data-tippy-animate='bubble']:before {
+  -webkit-clip-path: circle(10% at 50% 100%);
+  clip-path: circle(10% at 50% 100%)
+}
+
+.chatbro_data_tippy [data-tippy][data-tippy-pos='up'][data-tippy-animate='bubble']:hover:before {
+  -webkit-clip-path: circle(100% at 50%);
+  clip-path: circle(100% at 50%)
+}
+
+.chatbro_data_tippy [data-tippy][data-tippy-pos='down'][data-tippy-animate='bubble']:before {
+  -webkit-clip-path: circle(10% at 50% 0);
+  clip-path: circle(10% at 50% 0)
+}
+
+.chatbro_data_tippy [data-tippy][data-tippy-pos='down'][data-tippy-animate='bubble']:hover:before {
+  -webkit-clip-path: circle(100% at 50%);
+  clip-path: circle(100% at 50%)
+}
+
+.chatbro_data_tippy [data-tippy][data-tippy-pos='left'][data-tippy-animate='bubble']:before {
+  -webkit-clip-path: circle(10% at 100% 50%);
+  clip-path: circle(10% at 100% 50%)
+}
+
+.chatbro_data_tippy [data-tippy][data-tippy-pos='left'][data-tippy-animate='bubble']:hover:before {
+  -webkit-clip-path: circle(100% at 50%);
+  clip-path: circle(100% at 50%)
+}
+
+.chatbro_data_tippy [data-tippy][data-tippy-pos='right'][data-tippy-animate='bubble']:before {
+  -webkit-clip-path: circle(10% at 0 50%);
+  clip-path: circle(10% at 0 50%)
+}
+
+.chatbro_data_tippy [data-tippy][data-tippy-pos='right'][data-tippy-animate='bubble']:hover:before {
+  -webkit-clip-path: circle(100% at 50%);
+  clip-path: circle(100% at 50%)
+}
+
+.chatbro_image_delete-ico {
+  background-image: url(//www.chatbro.com/images/sprites.png) !important;
+  background-position: -74px -14px !important;
+  width: 10px;
+  height: 10px
+}
+
+.chatbro_image_ok {
+  background-image: url(//www.chatbro.com/images/sprites.png) !important;
+  background-position: 0 0 !important;
+  width: 32px;
+  height: 32px
+}
+
+.chatbro_image_question {
+  background-image: url(//www.chatbro.com/images/sprites.png) !important;
+  background-position: -37px 0 !important;
+  width: 32px;
+  height: 32px
+}
+
+.chatbro_image_reply_ico {
+  background-image: url(//www.chatbro.com/images/sprites.png) !important;
+  background-position: -74px 0 !important;
+  width: 12px;
+  height: 9px
+}
+
+.chatbro_image_send {
+  background-image: url(//www.chatbro.com/images/sprites.png) !important;
+  background-position: 0 -37px !important;
+  width: 32px;
+  height: 32px
+}
+
+.chatbro_image_smile {
+  background-image: url(//www.chatbro.com/images/sprites.png) !important;
+  background-position: -37px -37px !important;
+  width: 32px;
+  height: 32px
+}
+
+.sprite-icon {
+  display: inline-block
+}
+
+.chatbro_opacity {
+  visibility: hidden
+}
+
+.chatbro_opacity {
+  animation-name: chatbroopacity;
+  -webkit-animation-name: chatbroopacity;
+  animation-duration: .1s;
+  -webkit-animation-duration: .1s;
+  animation-timing-function: ease-out;
+  -webkit-animation-timing-function: ease-out;
+  visibility: visible !important
+}
+
+@keyframes chatbroopacity {
+  0% {
+    opacity: 0
+  }
+  10% {
+    opacity: .1
+  }
+  20% {
+    opacity: .2
+  }
+  30% {
+    opacity: .3
+  }
+  40% {
+    opacity: .4
+  }
+  50% {
+    opacity: .5
+  }
+  60% {
+    opacity: .6
+  }
+  70% {
+    opacity: .7
+  }
+  80% {
+    opacity: .8
+  }
+  90% {
+    opacity: .9
+  }
+  100% {
+    opacity: 1
+  }
+}
+
+.chatbro_new_scroll::-webkit-scrollbar {
+  width: 8px
+}
+
+.chatbro_new_scroll::-webkit-scrollbar * {
+  background: transparent
+}
+
+.chatbro_new_scroll::-webkit-scrollbar-thumb {
+  background: #AAAAAA !important;
+  -webkit-overflow-scrolling: touch
+}
+
+.chatbro_new_scroll_horizontal::-webkit-scrollbar {
+  height: 8px
+}
+
+.chatbro_new_scroll_horizontal::-webkit-scrollbar * {
+  background: transparent
+}
+
+.chatbro_new_scroll_horizontal::-webkit-scrollbar-thumb {
+  background: #AAAAAA !important;
+  -webkit-overflow-scrolling: touch
+}
+
+@font-face {
+  font-family: "chatbro";
+  src: url("//www.chatbro.com/fonts/chatbro.eot?4");
+  src: url("//www.chatbro.com/fonts/chatbro.eot?#iefix?4") format("embedded-opentype"), url("//www.chatbro.com/fonts/chatbro.woff?4") format("woff"), url("//www.chatbro.com/fonts/chatbro.ttf?4") format("truetype"), url("//www.chatbro.com/fonts/chatbro.svg?4#chatbro") format("svg");
+  font-weight: normal;
+  font-style: normal
+}
+
+@font-face {
+  font-family: 'glyphicons-halflings-regular';
+  src: url('//www.chatbro.com/fonts/glyphicons-halflings-regular.eot');
+  src: url('//www.chatbro.com/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('//www.chatbro.com/fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('//www.chatbro.com/fonts/glyphicons-halflings-regular.woff') format('woff'), url('//www.chatbro.com/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('//www.chatbro.com/fonts/glyphicons-halflings-regular.svg#svgFontName') format('svg')
+}
+
+.chatbro_ico {
+  font-family: "chatbro", serif !important
+}
+
+.chatbro_Facebook_ico:before {
+  content: "\4d"
+}
+
+.chatbro_Telegram_ico:before {
+  content: "\45"
+}
+
+.chatbro_VKontakte_ico:before {
+  content: "\54"
+}
+
+.chatbro_Google_ico:before {
+  content: "\4e";
+  font-weight: bold;
+  position: relative;
+  top: 2px
+}
+
+.chatbro_container {
+  position: relative
+}
+
+.chatbro_container [data-tippy] {
+  position: absolute;
+  height: inherit;
+  width: inherit;
+  top: 0;
+  left: 0
+}
+
+.chatbro_container [data-tippy]:before,
+.chatbro_container [data-tippy]:after {
+  position: absolute;
+  display: block;
+  opacity: 0;
+  transition: all .18s ease-out;
+  font-family: sans-serif;
+  transform: translate3d(-50%, 0, 0);
+  transform-origin: top;
+  top: 100%;
+  left: 50%;
+  pointer-events: none;
+  font-weight: 100
+}
+
+.chatbro_container [data-tippy]:before {
+  content: attr(data-tippy);
+  color: #fff;
+  font-size: 13px;
+  background-color: #000;
+  z-index: 1;
+  padding: 3px 6px;
+  border-radius: 3px;
+  white-space: nowrap;
+  margin-top: 10px
+}
+
+.chatbro_container [data-tippy]:after {
+  content: '';
+  border: 5px solid transparent;
+  border-bottom-color: #000
+}
+
+.chatbro_container [data-tippy]:hover:before,
+.chatbro_container [data-tippy]:hover:after {
+  transform: translate3d(-50%, 0, 0)
+}
+
+.chatbro_container [data-tippy][data-tippy-pos]:before {
+  top: auto;
+  left: auto;
+  margin-top: auto;
+  transform: none
+}
+
+.chatbro_container [data-tippy][data-tippy-pos]:after {
+  top: auto;
+  left: auto;
+  margin-top: auto;
+  border-bottom-color: transparent;
+  transform: none
+}
+
+.chatbro_container [data-tippy][data-tippy-pos='up']:before,
+.chatbro_container [data-tippy][data-tippy-pos='up']:after,
+.chatbro_container [data-tippy][data-tippy-pos='down']:before,
+.chatbro_container [data-tippy][data-tippy-pos='down']:after {
+  left: 50%
+}
+
+.chatbro_container [data-tippy][data-tippy-pos='topLeft']:before,
+.chatbro_container [data-tippy][data-tippy-pos='topLeft']:after {
+  left: 50%
+}
+
+.chatbro_container [data-tippy][data-tippy-pos='topRight']:before,
+.chatbro_container [data-tippy][data-tippy-pos='topRight']:after {
+  left: 50%
+}
+
+.chatbro_container [data-tippy][data-tippy-pos='up']:before,
+.chatbro_container [data-tippy][data-tippy-pos='up']:after {
+  bottom: 100%;
+  transform: translate3d(-50%, 0, 0)
+}
+
+.chatbro_container [data-tippy][data-tippy-pos='topLeft']:before,
+.chatbro_container [data-tippy][data-tippy-pos='topLeft']:after {
+  bottom: 100%;
+  transform: translate3d(-15%, 0, 0)
+}
+
+.chatbro_container [data-tippy][data-tippy-pos='topRight']:before,
+.chatbro_container [data-tippy][data-tippy-pos='topRight']:after {
+  bottom: 100%;
+  transform: translate3d(-75%, 0, 0)
+}
+
+.chatbro_container [data-tippy][data-tippy-pos='up']:before,
+.chatbro_container [data-tippy][data-tippy-pos='topRight']:before,
+.chatbro_container [data-tippy][data-tippy-pos='topLeft']:before {
+  margin-bottom: 10px
+}
+
+.chatbro_container [data-tippy][data-tippy-pos='up']:after,
+.chatbro_container [data-tippy][data-tippy-pos='topRight']:after,
+.chatbro_container [data-tippy][data-tippy-pos='topLeft']:after {
+  border-top-color: #000;
+  border-bottom-color: transparent
+}
+
+.chatbro_container [data-tippy][data-tippy-pos='down']:before,
+.chatbro_container [data-tippy][data-tippy-pos='down']:after {
+  top: 100%;
+  transform: translate3d(-90%, 0, 0)
+}
+
+.chatbro_container [data-tippy][data-tippy-pos='down']:before {
+  margin-top: 10px
+}
+
+.chatbro_container [data-tippy][data-tippy-pos='down']:after {
+  border-bottom-color: #000;
+  border-top-color: transparent
+}
+
+.chatbro_container [data-tippy][data-tippy-pos='left']:before,
+.chatbro_container [data-tippy][data-tippy-pos='left']:after,
+.chatbro_container [data-tippy][data-tippy-pos='right']:before,
+.chatbro_container [data-tippy][data-tippy-pos='right']:after {
+  top: 50%
+}
+
+.chatbro_container [data-tippy][data-tippy-pos='left']:before,
+.chatbro_container [data-tippy][data-tippy-pos='left']:after {
+  right: 100%;
+  transform: translate3d(0, -50%, 0)
+}
+
+.chatbro_container [data-tippy][data-tippy-pos='left']:before {
+  margin-right: 10px
+}
+
+.chatbro_container [data-tippy][data-tippy-pos='left']:after {
+  border-left-color: #000
+}
+
+.chatbro_container [data-tippy][data-tippy-pos='right']:before,
+.chatbro_container [data-tippy][data-tippy-pos='right']:after {
+  left: 100%;
+  transform: translate3d(0, -50%, 0)
+}
+
+.chatbro_container [data-tippy][data-tippy-pos='right']:before {
+  margin-left: 10px
+}
+
+.chatbro_container [data-tippy][data-tippy-pos='right']:after {
+  border-right-color: #000
+}
+
+.chatbro_container [data-tippy]:hover:before,
+.chatbro_container [data-tippy]:hover:after {
+  opacity: 1
+}
+
+.chatbro_container [data-tippy][data-tippy-animate='slide']:before,
+.chatbro_container [data-tippy][data-tippy-animate='slide']:after {
+  transform: translate3d(-50%, -10px, 0)
+}
+
+.chatbro_container [data-tippy][data-tippy-animate='slide']:hover:before,
+.chatbro_container [data-tippy][data-tippy-animate='slide']:hover:after {
+  transform: translate3d(-50%, 0, 0)
+}
+
+.chatbro_container [data-tippy][data-tippy-pos='up'][data-tippy-animate='slide']:before,
+.chatbro_container [data-tippy][data-tippy-pos='up'][data-tippy-animate='slide']:after {
+  transform: translate3d(-50%, 10px, 0)
+}
+
+.chatbro_container [data-tippy][data-tippy-pos='down'][data-tippy-animate='slide']:before,
+.chatbro_container [data-tippy][data-tippy-pos='down'][data-tippy-animate='slide']:after {
+  transform: translate3d(-50%, -10px, 0)
+}
+
+.chatbro_container [data-tippy][data-tippy-pos='up'][data-tippy-animate='slide']:hover:before,
+.chatbro_container [data-tippy][data-tippy-pos='up'][data-tippy-animate='slide']:hover:after,
+.chatbro_container [data-tippy][data-tippy-pos='down'][data-tippy-animate='slide']:hover:before,
+.chatbro_container [data-tippy][data-tippy-pos='down'][data-tippy-animate='slide']:hover:after {
+  transform: translate3d(-50%, 0, 0)
+}
+
+.chatbro_container [data-tippy][data-tippy-pos='left'][data-tippy-animate='slide']:before,
+.chatbro_container [data-tippy][data-tippy-pos='left'][data-tippy-animate='slide']:after {
+  transform: translate3d(10px, -50%, 0)
+}
+
+.chatbro_container [data-tippy][data-tippy-pos='right'][data-tippy-animate='slide']:before,
+.chatbro_container [data-tippy][data-tippy-pos='right'][data-tippy-animate='slide']:after {
+  transform: translate3d(-10px, -50%, 0)
+}
+
+.chatbro_container [data-tippy][data-tippy-pos='left'][data-tippy-animate='slide']:hover:before,
+.chatbro_container [data-tippy][data-tippy-pos='left'][data-tippy-animate='slide']:hover:after,
+.chatbro_container [data-tippy][data-tippy-pos='right'][data-tippy-animate='slide']:hover:before,
+.chatbro_container [data-tippy][data-tippy-pos='right'][data-tippy-animate='slide']:hover:after {
+  transform: translate3d(0, -50%, 0)
+}
+
+.chatbro_container [data-tippy][data-tippy-animate='bubble']:before,
+.chatbro_container [data-tippy][data-tippy-animate='bubble']:after {
+  opacity: 1;
+  visibility: hidden
+}
+
+.chatbro_container [data-tippy][data-tippy-animate='bubble']:hover:before,
+.chatbro_container [data-tippy][data-tippy-animate='bubble']:hover:after {
+  visibility: visible
+}
+
+.chatbro_container [data-tippy][data-tippy-animate='bubble']:before {
+  -webkit-clip-path: circle(10% at 50% 0);
+  clip-path: circle(10% at 50% 0)
+}
+
+.chatbro_container [data-tippy][data-tippy-animate='bubble']:hover:before {
+  -webkit-clip-path: circle(100% at 50%);
+  clip-path: circle(100% at 50%)
+}
+
+.chatbro_container [data-tippy][data-tippy-pos='up'][data-tippy-animate='bubble']:before {
+  -webkit-clip-path: circle(10% at 50% 100%);
+  clip-path: circle(10% at 50% 100%)
+}
+
+.chatbro_container [data-tippy][data-tippy-pos='up'][data-tippy-animate='bubble']:hover:before {
+  -webkit-clip-path: circle(100% at 50%);
+  clip-path: circle(100% at 50%)
+}
+
+.chatbro_container [data-tippy][data-tippy-pos='down'][data-tippy-animate='bubble']:before {
+  -webkit-clip-path: circle(10% at 50% 0);
+  clip-path: circle(10% at 50% 0)
+}
+
+.chatbro_container [data-tippy][data-tippy-pos='down'][data-tippy-animate='bubble']:hover:before {
+  -webkit-clip-path: circle(100% at 50%);
+  clip-path: circle(100% at 50%)
+}
+
+.chatbro_container [data-tippy][data-tippy-pos='left'][data-tippy-animate='bubble']:before {
+  -webkit-clip-path: circle(10% at 100% 50%);
+  clip-path: circle(10% at 100% 50%)
+}
+
+.chatbro_container [data-tippy][data-tippy-pos='left'][data-tippy-animate='bubble']:hover:before {
+  -webkit-clip-path: circle(100% at 50%);
+  clip-path: circle(100% at 50%)
+}
+
+.chatbro_container [data-tippy][data-tippy-pos='right'][data-tippy-animate='bubble']:before {
+  -webkit-clip-path: circle(10% at 0 50%);
+  clip-path: circle(10% at 0 50%)
+}
+
+.chatbro_container [data-tippy][data-tippy-pos='right'][data-tippy-animate='bubble']:hover:before {
+  -webkit-clip-path: circle(100% at 50%);
+  clip-path: circle(100% at 50%)
+}
+
+.chatbro_container .chatbro_unmovable_chat {
+  position: relative
+}
+
+.chatbro_container .chatbro_movable_chat {
+  position: fixed;
+  z-index: 899998
+}
+
+.chatbro_container .chatbro_minimized_chat.chatbro_movable_chat {
+  bottom: 0;
+  z-index: 899990
+}
+
+.chatbro_container .chatbro_minimized_chat.chatbro_unmovable_chat {
+  display: none
+}
+
+.chatbro_container .chatbro_minimized_chat.chatbro_unmovable_chat .chatbro_minimized_caption {
+  width: 100%
+}
+
+.chatbro_container * {
+  box-sizing: border-box;
+  font-family: Tahoma, Helvetica, sans-serif !important
+}
+
+.chatbro_container .emojione {
+  font-size: inherit;
+  height: 3ex;
+  width: 3.1ex;
+  min-height: 20px;
+  min-width: 20px;
+  display: inline-block;
+  margin: -0.2ex .15em .2ex;
+  line-height: normal;
+  vertical-align: middle
+}
+
+.chatbro_container img.emojione {
+  width: auto
+}
+
+.chatbro_container table {
+  border: none !important;
+  background-color: inherit
+}
+
+.chatbro_container table tr,
+.chatbro_container table td,
+.chatbro_container table tbody {
+  border: none;
+  background: none !important
+}
+
+.chatbro_container button,
+.chatbro_container input {
+  border: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  min-height: 0 !important;
+  font-weight: normal !important;
+  text-shadow: none !important;
+  outline: none !important;
+  text-transform: none !important;
+  min-width: 1px;
+  line-height: normal
+}
+
+.chatbro_container button {
+  font-family: "chatbro", serif !important;
+  text-align: center !important
+}
+
+.chatbro_container label {
+  text-transform: none
+}
+
+.chatbro_chat_wrapper {
+  width: 100%;
+  height: inherit;
+  display: block
+}
+
+.chatbro_chat {
+  display: block
+}
+
+.chatbro_chat table {
+  display: table;
+  height: auto;
+  border-collapse: initial !important
+}
+
+.chatbro_chat a {
+  color: #0096cf;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 12px;
+  word-wrap: normal;
+  border-bottom: none;
+  display: inline
+}
+
+.chatbro_chat a:hover {
+  border-bottom: 0;
+  color: #0096cf;
+  text-decoration: underline
+}
+
+.chatbro_chat .chatbro_ok:before {
+  content: "\41";
+  vertical-align: bottom;
+  font-family: "chatbro", serif !important
+}
+
+.chatbro_header {
+  position: relative;
+  z-index: 6;
+  width: 100%;
+  height: 35px
+}
+
+.chatbro_header tbody,
+.chatbro_header tr,
+.chatbro_header td {
+  height: inherit
+}
+
+.chatbro_header .hideChatArea {
+  position: absolute;
+  width: 100%;
+  background: black;
+  opacity: .5
+}
+
+.chatbro_header table {
+  width: 100%;
+  height: 100% !important;
+  table-layout: auto !important;
+  border-spacing: 0 !important;
+  margin: 0
+}
+
+.chatbro_header table td {
+  padding: 0 !important;
+  margin: 0;
+  display: table-cell;
+  vertical-align: middle !important;
+  border: none !important
+}
+
+.chatbro_header .chatbro_header_caption_td {
+  width: 100%
+}
+
+.chatbro_header .chatbro_header_caption_td .chatbro_minimized_caption {
+  display: inline
+}
+
+.chatbro_header .chatbro_header_button {
+  width: 27px;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  background: none
+}
+
+.chatbro_header .chatbro_header_button span {
+  display: none
+}
+
+.chatbro_header .chatbro_caption {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none
+}
+
+.chatbro_header .chatbro_chat_name {
+  padding: 3px 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  float: left;
+  font-size: 13px;
+  height: 100%;
+  line-height: 29px
+}
+
+.chatbro_header .chatbro_title {
+  font-size: 13px;
+  font-weight: bold;
+  margin: 0 5px;
+  padding: 0;
+  text-overflow: ellipsis;
+  text-align: left
+}
+
+.chatbro_header .chatbro_title>* {
+  display: inline-block
+}
+
+.chatbro_header .chatbro_participant_wrapper_max,
+.chatbro_header .chatbro_participant_wrapper_min,
+.chatbro_header .chatbro_notifications {
+  float: right;
+  padding: 3px 1px;
+  font-size: 13px;
+  height: 100%;
+  line-height: 27px
+}
+
+.chatbro_header .chatbro_notifications {
+  cursor: pointer;
+  padding: 3px 0;
+  display: none
+}
+
+.chatbro_header .chatbro_participant_count {
+  display: none;
+  margin: 0 4px;
+  position: relative
+}
+
+.chatbro_header .chatbro_participant_ico {
+  font-size: 12px;
+  top: 1px;
+  position: relative
+}
+
+.chatbro_header .chatbro_participant_ico:before {
+  content: '\33'
+}
+
+.chatbro_header .chatbro_alarm_ico {
+  font-size: 9px
+}
+
+.chatbro_header .chatbro_alarm_ico:before {
+  content: '\6c'
+}
+
+.chatbro_header .chatbro_bell_ico {
+  font-size: 12px;
+  top: 2px;
+  position: relative;
+  margin-right: 15px;
+  cursor: pointer
+}
+
+.chatbro_header .chatbro_bell_ico:before {
+  content: '\31'
+}
+
+.chatbro_header .chatbro_minimized_invite_button,
+.chatbro_header .chatbro_maximized_invite_button {
+  float: left
+}
+
+.chatbro_header .chatbro_minimized_invite_button:before,
+.chatbro_header .chatbro_maximized_invite_button:before {
+  content: "\79"
+}
+
+.chatbro_header .chatbro_minimize_button {
+  float: right
+}
+
+.chatbro_header .chatbro_minimize_button:before {
+  content: "\34";
+  display: inline;
+  font-weight: normal;
+  font-size: 14px;
+  position: relative;
+  top: 1px
+}
+
+.chatbro_header .chatbro_header_minimized_movable {
+  margin: 0 10px;
+  display: inline-block;
+  font-weight: bold
+}
+
+.chatbro_header .chatbro_header_minimized_movable .chatbro_participant_ico,
+.chatbro_header .chatbro_header_minimized_movable .new_messages_count_wrapper,
+.chatbro_header .chatbro_alarm_ico {
+  font-size: 11px
+}
+
+.chatbro_header .chatbro_alarm_ico {
+  cursor: pointer;
+  position: relative;
+  top: 2px;
+  padding: 3px 0;
+  font-size: 12px;
+  font-weight: 100
+}
+
+.chatbro_header .chatbro_header_minimized_movable .new_messages_count {
+  font-size: 14px
+}
+
+.chatbro_header .chatbro_header_minimized_movable .chatbro_participant_count {
+  font-size: 15px
+}
+
+.chatbro_header .chatbro_participant_ico,
+.chatbro_header .new_messages_count_wrapper,
+.chatbro_header .chatbro_alarm_ico,
+.chatbro_header .chatbro_bell_ico {
+  font-family: "chatbro", serif !important
+}
+
+.chatbro_minimized_header {
+  z-index: 1;
+  transition: background 1s;
+  transition: opacity 1s ease-in-out
+}
+
+.chatbro_movable_chat .chatbro_minimized_header {
+  min-width: 47px;
+  max-width: 300px;
+  text-align: center;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px
+}
+
+.chatbro_movable_chat .chatbro_minimized_header table,
+.chatbro_movable_chat .chatbro_minimized_header td {
+  text-align: center
+}
+
+.chatbro_body {
+  border: 2px solid;
+  border-top: none;
+  border-bottom: none;
+  position: relative
+}
+
+.chatbro_body .chatbro_system_messages {
+  transition: padding-top 1s
+}
+
+.chatbro_body .chatbro_system_messages_block {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  background-clip: padding-box;
+  border: none;
+  border-bottom: 1px solid black;
+  font-size: 12px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none
+}
+
+.chatbro_body .chatbro_system_messages_block .chatbro_system_messages_hide {
+  bottom: -8px;
+  right: 11px;
+  width: auto;
+  height: auto;
+  color: #404040;
+  background: white;
+  position: absolute;
+  border: 1px solid #474d5b;
+  padding: 0 3px;
+  line-height: 15px;
+  background: inherit;
+  border-radius: 10px;
+  z-index: 5;
+  cursor: pointer;
+  font-weight: bold
+}
+
+.chatbro_body .chatbro_system_messages_block .chatbro_system_messages_hide:before {
+  content: "\34";
+  display: inline;
+  font-weight: normal;
+  font-size: 10px;
+  position: relative;
+  top: 1px;
+  font-family: "chatbro", serif !important
+}
+
+.chatbro_body .chatbro_system_messages_block .chatbro_system_messages_wrapper {
+  overflow-y: auto;
+  line-height: 18.3429px;
+  padding: 3px 1px
+}
+
+.chatbro_body .chatbro_system_messages_block .chatbro_system_messages_wrapper::-webkit-scrollbar {
+  width: 8px
+}
+
+.chatbro_body .chatbro_system_messages_block .chatbro_system_messages_wrapper::-webkit-scrollbar * {
+  background: transparent
+}
+
+.chatbro_body .chatbro_system_messages_block .chatbro_system_messages_wrapper::-webkit-scrollbar-thumb {
+  background: #AAAAAA !important;
+  -webkit-overflow-scrolling: touch
+}
+
+.chatbro_body .chatbro_system_messages_block .chatbro_system_messages_frame_bottom {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  height: 9px;
+  bottom: -5px;
+  cursor: s-resize
+}
+
+.chatbro_body .chatbro_system_messages_block .chatbro_system_message_info {
+  color: #0c5460;
+  background-color: #d1ecf1;
+  border-color: #bee5eb
+}
+
+.chatbro_body .chatbro_system_messages_block .chatbro_system_message_warning {
+  color: #856404;
+  background-color: #fff3cd;
+  border-color: #ffeeba
+}
+
+.chatbro_body .chatbro_system_messages_block .chatbro_system_message_error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb
+}
+
+.chatbro_body .chatbro_system_messages_block .chatbro_system_message_success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb
+}
+
+.chatbro_body .chatbro_system_messages_block .chatbro_system_message_common {
+  color: #383d41;
+  background-color: #e2e3e5;
+  border-color: #d6d8db
+}
+
+.chatbro_body .chatbro_system_messages_block .chatbro_system_message_wrapped {
+  padding: 10px 0;
+  border: 1px solid;
+  margin-bottom: 3px;
+  border-radius: 2px
+}
+
+.chatbro_body .chatbro_system_messages_block .chatbro_system_message_wrapped:last-of-type {
+  margin-bottom: 0
+}
+
+.chatbro_body .chatbro_system_messages_block .chatbro_system_message_wrapped .chatbro_system_message {
+  padding: 0 12px;
+  color: inherit
+}
+
+.chatbro_body .chatbro_system_messages_block .chatbro_system_message_info_icon,
+.chatbro_body .chatbro_system_messages_block .chatbro_system_message_warning_icon,
+.chatbro_body .chatbro_system_messages_block .chatbro_system_message_error_icon,
+.chatbro_body .chatbro_system_messages_block .chatbro_system_message_success_icon,
+.chatbro_body .chatbro_system_messages_block .chatbro_system_message_common_icon {
+  font-size: 15px;
+  position: relative;
+  top: 3px;
+  padding-right: 10px;
+  font-family: "chatbro", serif !important
+}
+
+.chatbro_body .chatbro_system_messages_block .chatbro_system_message_warning_icon:before {
+  content: "\6c"
+}
+
+.chatbro_body .chatbro_system_messages_block .chatbro_system_message_error_icon:before {
+  content: "\70"
+}
+
+.chatbro_body .chatbro_system_messages_block .chatbro_system_message_success_icon:before {
+  content: "\41"
+}
+
+.chatbro_body .chatbro_system_messages_block .chatbro_system_message_info_icon:before,
+.chatbro_body .chatbro_system_messages_block .chatbro_system_message_common_icon:before {
+  content: "\43"
+}
+
+.chatbro_body .chatbro_modal_block {
+  position: absolute;
+  font-size: 14px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  overflow: auto;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility .3s, opacity .3s linear
+}
+
+.chatbro_body .chatbro_modal_block::-webkit-scrollbar {
+  width: 8px
+}
+
+.chatbro_body .chatbro_modal_block::-webkit-scrollbar * {
+  background: transparent
+}
+
+.chatbro_body .chatbro_modal_block::-webkit-scrollbar-thumb {
+  background: #AAAAAA !important;
+  -webkit-overflow-scrolling: touch
+}
+
+.chatbro_body .chatbro_modal_block button {
+  font-family: Tahoma, Helvetica, sans-serif !important
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_fade_side_block,
+.chatbro_body .chatbro_modal_block .chatbro_fade_block {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_fade_block {
+  background: black;
+  opacity: .5
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_fade_block .chatbro_login_progress_radial {
+  display: block;
+  position: relative;
+  top: 45%;
+  margin: 0 auto;
+  text-indent: -9999em;
+  border: 5px solid rgba(120, 120, 120, 0.35);
+  border-left-color: #ffffff;
+  transform: translateZ(0);
+  animation: chatbro_loader_radial 1.1s infinite linear
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_fade_block .chatbro_login_progress_radial,
+.chatbro_body .chatbro_modal_block .chatbro_fade_block .chatbro_login_progress_radial:after {
+  border-radius: 50%;
+  width: 45px;
+  height: 45px
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper {
+  position: relative
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal {
+  position: relative;
+  width: 85%;
+  min-width: 200px;
+  padding: 20px;
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  margin: 0 auto
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal * {
+  text-align: left;
+  line-height: normal
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal .chatbro_modal_ok_button {
+  float: right;
+  height: 26px;
+  cursor: pointer;
+  opacity: .8;
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  background-size: auto !important;
+  margin-top: 1px;
+  text-align: right;
+  font-size: 12px;
+  font-weight: bold !important
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal .chatbro_modal_ok_button:hover {
+  opacity: .99
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal .chatbro_modal_head {
+  font-size: 18px;
+  color: #3F4549;
+  margin-bottom: 12px
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal span.chatbro_modal_close {
+  font-family: "chatbro", serif !important;
+  float: right;
+  cursor: pointer
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal span.chatbro_modal_close:before {
+  content: "\63";
+  display: inline;
+  font-weight: normal;
+  font-size: 15px
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_menu {
+  max-width: 300px;
+  position: relative;
+  width: 85%;
+  min-width: 200px;
+  padding: 20px;
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  margin: 0 auto
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_menu * {
+  text-align: left;
+  line-height: normal
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_menu .chatbro_modal_ok_button {
+  float: right;
+  height: 26px;
+  cursor: pointer;
+  opacity: .8;
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  background-size: auto !important;
+  margin-top: 1px;
+  text-align: right;
+  font-size: 12px;
+  font-weight: bold !important
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_menu .chatbro_modal_ok_button:hover {
+  opacity: .99
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_menu .chatbro_modal_head {
+  font-size: 18px;
+  color: #3F4549;
+  margin-bottom: 12px
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_menu span.chatbro_modal_close {
+  font-family: "chatbro", serif !important;
+  float: right;
+  cursor: pointer
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_menu span.chatbro_modal_close:before {
+  content: "\63";
+  display: inline;
+  font-weight: normal;
+  font-size: 15px
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_menu .chatbro_modal_menu_body p {
+  cursor: pointer
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_menu .chatbro_modal_menu_body p:hover {
+  opacity: .8
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_menu .chatbro_modal_menu_body .chatbro_modal_menu_set_moder,
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_menu .chatbro_modal_menu_body .chatbro_modal_menu_delete_moder {
+  margin-bottom: 0
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_ban {
+  max-width: 300px;
+  height: 265px;
+  position: relative;
+  width: 85%;
+  min-width: 200px;
+  padding: 20px;
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  margin: 0 auto
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_ban * {
+  text-align: left;
+  line-height: normal
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_ban .chatbro_modal_ok_button {
+  float: right;
+  height: 26px;
+  cursor: pointer;
+  opacity: .8;
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  background-size: auto !important;
+  margin-top: 1px;
+  text-align: right;
+  font-size: 12px;
+  font-weight: bold !important
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_ban .chatbro_modal_ok_button:hover {
+  opacity: .99
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_ban .chatbro_modal_head {
+  font-size: 18px;
+  color: #3F4549;
+  margin-bottom: 12px
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_ban span.chatbro_modal_close {
+  font-family: "chatbro", serif !important;
+  float: right;
+  cursor: pointer
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_ban span.chatbro_modal_close:before {
+  content: "\63";
+  display: inline;
+  font-weight: normal;
+  font-size: 15px
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_ban .chatbro_modal_ban_reason {
+  width: 100%;
+  resize: none
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_ban .chatbro_modal_ban_info_shadow {
+  cursor: help;
+  border-bottom: 1px dotted;
+  vertical-align: 5px
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_ban .chatbro_modal_ban_is_shadow {
+  margin-top: 1px
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_ban .chatbro_modal_ban_info_duration {
+  margin-bottom: 8px
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_ban .chatbro_modal_ban_info_header {
+  margin-right: 7px
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_ban .chatbro_modal_ban_info {
+  font-size: 13px;
+  margin-bottom: 12px
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_ban .chatbro_modal_ban_info .chatbro_ban_by_ip,
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_ban .chatbro_modal_ban_info .chatbro_ban_by_user_id {
+  display: inline-block
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_ban .chatbro_modal_ban_info .chatbro_ban_by_ip *,
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_ban .chatbro_modal_ban_info .chatbro_ban_by_user_id * {
+  cursor: pointer
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_ban .chatbro_modal_ban_info .chatbro_ban_by_ip label,
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_ban .chatbro_modal_ban_info .chatbro_ban_by_user_id label {
+  margin-right: 7px;
+  margin-bottom: 0;
+  vertical-align: 2px;
+  font-weight: normal
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_ban .chatbro_modal_ban_info .chatbro_ban_by_ip {
+  margin-right: 20px
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_ban .chatbro_modal_ban_input_block input.chatbro_modal_ban_input {
+  width: 100%;
+  margin-bottom: 12px
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_ban .chatbro_modal_ban_btn {
+  float: right;
+  height: 26px;
+  cursor: pointer;
+  opacity: .8;
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  background-size: auto !important;
+  margin-top: 1px;
+  text-align: right;
+  font-size: 12px;
+  font-weight: bold !important
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_ban .chatbro_modal_ban_btn:hover {
+  opacity: .99
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_login {
+  max-width: 300px;
+  position: relative;
+  width: 85%;
+  min-width: 200px;
+  padding: 20px;
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  margin: 0 auto
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_login * {
+  text-align: left;
+  line-height: normal
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_login .chatbro_modal_ok_button {
+  float: right;
+  height: 26px;
+  cursor: pointer;
+  opacity: .8;
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  background-size: auto !important;
+  margin-top: 1px;
+  text-align: right;
+  font-size: 12px;
+  font-weight: bold !important
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_login .chatbro_modal_ok_button:hover {
+  opacity: .99
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_login .chatbro_modal_head {
+  font-size: 18px;
+  color: #3F4549;
+  margin-bottom: 12px
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_login span.chatbro_modal_close {
+  font-family: "chatbro", serif !important;
+  float: right;
+  cursor: pointer
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_login span.chatbro_modal_close:before {
+  content: "\63";
+  display: inline;
+  font-weight: normal;
+  font-size: 15px
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_login .chatbro_modal_login .chatbro_modal_login_or {
+  height: 23px
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_login .chatbro_modal_login .chatbro_modal_login_or .chatbro_modal_login_or_hr {
+  border-color: #565B5F
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_login .chatbro_modal_login .chatbro_modal_login_or .chatbro_modal_login_or_span {
+  text-align: center;
+  position: relative;
+  top: -32px;
+  background: #FFF;
+  width: 32px
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_login .chatbro_modal_login .chatbro_modal_login_social {
+  margin-bottom: 20px
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_login .chatbro_modal_login .chatbro_modal_login_social a+a {
+  margin-left: 10px
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_login .chatbro_modal_login .chatbro_modal_login_social img {
+  height: 33px;
+  display: inline
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_login .chatbro_modal_login .chatbro_custom_login_link {
+  font-size: 18px
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_login .chatbro_modal_login .chatbro_modal_login_termsofuse {
+  font-size: 12px;
+  margin-top: 15px
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_login .chatbro_modal_login .chatbro_modal_login_input_block .chatbro_modal_login_input_wrapper {
+  padding-right: 30px
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_login .chatbro_modal_login .chatbro_modal_login_input_block .chatbro_modal_login_input_wrapper .chatbro_modal_login_input_div {
+  border: 1px solid;
+  margin-bottom: 5px
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_login .chatbro_modal_login .chatbro_modal_login_input_block .chatbro_modal_login_input_wrapper .chatbro_modal_login_input_div input[type="text"] {
+  margin: 0 !important;
+  display: block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-shadow: none;
+  height: 30px;
+  width: 100%;
+  border: none;
+  transition: border .3s;
+  padding: 0 5px !important
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_login .chatbro_modal_login .chatbro_modal_login_input_block .chatbro_modal_login_input_wrapper .chatbro_modal_login_input_div input[type="text"]::-webkit-input-placeholder {
+  color: inherit
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_login .chatbro_modal_login .chatbro_modal_login_input_block .chatbro_modal_login_input_wrapper .chatbro_modal_login_input_div input[type="text"]::-moz-placeholder {
+  color: inherit
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_login .chatbro_modal_login .chatbro_modal_login_input_block .chatbro_modal_login_input_wrapper .chatbro_modal_login_input_div input[type="text"]:-moz-placeholder {
+  color: inherit
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_login .chatbro_modal_login .chatbro_modal_login_input_block .chatbro_modal_login_input_wrapper .chatbro_modal_login_input_div input[type="text"]:-ms-input-placeholder {
+  color: inherit
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_login .chatbro_modal_login .chatbro_modal_login_input_block button.chatbro_modal_login_btn {
+  float: right;
+  height: 26px;
+  cursor: pointer;
+  opacity: .8;
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  background-size: auto !important;
+  margin-top: 1px;
+  text-align: right;
+  font-size: 12px;
+  font-weight: bold !important
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_login .chatbro_modal_login .chatbro_modal_login_input_block button.chatbro_modal_login_btn:hover {
+  opacity: .99
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_login .chatbro_modal_login .chatbro_modal_login_input_block button.chatbro_modal_login_btn span {
+  padding: 0
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_login .chatbro_modal_login .chatbro_model_login_label {
+  margin-bottom: 5px
+}
+
+.chatbro_body .chatbro_modal_block .chatbro_modal_wrapper_login .chatbro_modal_login .chatbro_modal_login_bot {
+  font-size: 12px;
+  margin-top: 7px;
+  display: none
+}
+
+.chatbro_body .chatbro_messages_wrapper {
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: #e8e8e8;
+  transform: translate3d(0, 0, 0)
+}
+
+.chatbro_body .chatbro_messages_wrapper .chatbro_messages_load_progress_radial {
+  display: block;
+  position: relative;
+  top: 45%;
+  margin: 0 auto;
+  text-indent: -9999em;
+  border: 5px solid rgba(120, 120, 120, 0.2);
+  border-left-color: #6594C6;
+  transform: translateZ(0);
+  animation: chatbro_loader_radial 1.1s infinite linear
+}
+
+.chatbro_body .chatbro_messages_wrapper .chatbro_messages_load_progress_radial,
+.chatbro_body .chatbro_messages_wrapper .chatbro_messages_load_progress_radial:after {
+  border-radius: 50%;
+  width: 45px;
+  height: 45px
+}
+
+.chatbro_body .chatbro_messages_wrapper .chatbro_messages_load_progress {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1
+}
+
+.chatbro_body .chatbro_messages_wrapper::-webkit-scrollbar {
+  width: 8px
+}
+
+.chatbro_body .chatbro_messages_wrapper::-webkit-scrollbar * {
+  background: transparent
+}
+
+.chatbro_body .chatbro_messages_wrapper::-webkit-scrollbar-thumb {
+  background: #AAAAAA !important;
+  -webkit-overflow-scrolling: touch
+}
+
+.chatbro_body .chatbro_messages_wrapper .chatbro_messages_space {
+  background-color: #ffffff
+}
+
+.chatbro_body .chatbro_messages_wrapper .chatbro_messages_block {
+  display: table-cell;
+  vertical-align: bottom;
+  position: relative;
+  z-index: 2;
+  background-color: #ffffff
+}
+
+.chatbro_guest_avatar {
+  width: 32px;
+  height: 32px;
+  margin-right: 9px;
+  margin-left: 7px;
+  margin-top: 4px;
+  display: block;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 32px;
+  text-transform: uppercase;
+  text-align: center;
+  background: #D65C5C
+}
+
+.chatbro_guest_avatar:before {
+  content: attr(data-name)
+}
+
+.chatbro_guest_bg_1 {
+  background: #cc90e2 !important
+}
+
+.chatbro_guest_bg_2 {
+  background: #80d066 !important
+}
+
+.chatbro_guest_bg_3 {
+  background: #ecd074 !important
+}
+
+.chatbro_guest_bg_4 {
+  background: #6fb1e4 !important
+}
+
+.chatbro_guest_bg_5 {
+  background: #e57979 !important
+}
+
+.chatbro_guest_bg_6 {
+  background: #f98bae !important
+}
+
+.chatbro_guest_bg_7 {
+  background: #73cdd0 !important
+}
+
+.chatbro_guest_bg_8 {
+  background: #fba76f !important
+}
+
+.chatbro_guest_bg_9 {
+  background: #953b39 !important
+}
+
+.chatbro_message_name_color_0 {
+  color: #b72e2e !important
+}
+
+.chatbro_message_name_color_1 {
+  color: #b053d2 !important
+}
+
+.chatbro_message_name_color_2 {
+  color: #55b337 !important
+}
+
+.chatbro_message_name_color_3 {
+  color: #e3b931 !important
+}
+
+.chatbro_message_name_color_4 {
+  color: #2f8ed8 !important
+}
+
+.chatbro_message_name_color_5 {
+  color: #d93939 !important
+}
+
+.chatbro_message_name_color_6 {
+  color: #f5427b !important
+}
+
+.chatbro_message_name_color_7 {
+  color: #3eb5b9 !important
+}
+
+.chatbro_message_name_color_8 {
+  color: #f97a25 !important
+}
+
+.chatbro_message_name_color_9 {
+  color: #5e2524 !important
+}
+
+.chatbro_messages {
+  overflow: hidden;
+  width: inherit !important;
+  height: auto;
+  margin: 0;
+  line-height: 18.3429px;
+  border-spacing: 0 !important
+}
+
+.chatbro_messages tbody {
+  display: block;
+  overflow: hidden;
+  width: 100%
+}
+
+.chatbro_messages .unchecked_message {
+  display: none
+}
+
+.chatbro_messages .chatbro_message {
+  font-size: 12px;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  text-shadow: none;
+  background: none
+}
+
+.chatbro_messages .chatbro_message .chatbro_message_wrapped {
+  padding-right: 7px
+}
+
+.chatbro_messages .chatbro_message td {
+  padding: 8px 2px !important;
+  vertical-align: top;
+  border-top: 1px solid transparent;
+  border-left: none;
+  border-right: none;
+  border-bottom: none
+}
+
+.chatbro_messages .chatbro_message .chatbro_message_empty_block {
+  width: 4px
+}
+
+.chatbro_messages .chatbro_message .chatbro_message_image_block {
+  width: 53px
+}
+
+.chatbro_messages .chatbro_message .chatbro_message_image {
+  width: 32px;
+  height: 32px;
+  margin: 4px 9px 0 7px;
+  max-width: none;
+  border-radius: 3px;
+  max-width: none !important
+}
+
+.chatbro_messages .chatbro_message .chatbro_message_date_block {
+  width: 56px;
+  line-height: 18.3429px;
+  transition: visibility 0s, opacity .5s linear
+}
+
+.chatbro_messages .chatbro_message_radial td {
+  padding-bottom: 30px
+}
+
+.chatbro_messages .chatbro_message_radial td .chatbro_messages_load_progress_radial,
+.chatbro_messages .chatbro_message_radial td .chatbro_messages_load_progress_radial:after {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px
+}
+
+.chatbro_messages .chatbro_messages_empty,
+.chatbro_messages .chatbro_messages_error {
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 10px;
+  line-height: 35px
+}
+
+.chatbro_messages .chatbro_messages_empty td,
+.chatbro_messages .chatbro_messages_error td {
+  display: block;
+  width: inherit;
+  text-align: center
+}
+
+.chatbro_messages .chatbro_messages_error {
+  display: none
+}
+
+.chatbro_messages .chatbro_message_td_message,
+.chatbro_messages .chatbro_messages_upload_td {
+  width: 100%
+}
+
+.chatbro_messages .chatbro_messages_upload {
+  width: 100%;
+  height: 20px;
+  background: url(//chatbro.com/images/upload.gif) no-repeat 50% 50%
+}
+
+.chatbro_messages .chatbro_message_auth_name {
+  text-align: left;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -ms-word-break: break-all;
+  word-break: break-all;
+  font-size: 12px;
+  line-height: 19px;
+  position: relative;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto
+}
+
+.chatbro_messages .chatbro_message_auth_name a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #0096cf;
+  line-height: 18px
+}
+
+.chatbro_messages .chatbro_message_user_type,
+.chatbro_messages .chatbro_dropdown_user_type {
+  font-size: 10px;
+  margin-left: 8px;
+  opacity: .4
+}
+
+.chatbro_messages .chatbro_message_admin,
+.chatbro_messages .chatbro_message_moder {
+  top: 0;
+  position: relative;
+  cursor: help;
+  padding: 1px 3px;
+  border-radius: 5px;
+  font-weight: bold;
+  border: 1px solid;
+  opacity: .5;
+  font-size: 9px
+}
+
+.chatbro_messages .chatbro_message_admin:before {
+  content: 'adm'
+}
+
+.chatbro_messages .chatbro_message_moder:before {
+  content: 'mod'
+}
+
+.chatbro_messages .chatbro_message_vk {
+  top: 2px;
+  position: relative;
+  cursor: help;
+  font-size: 11px;
+  font-family: "chatbro", serif !important
+}
+
+.chatbro_messages .chatbro_message_vk:before {
+  content: '\54'
+}
+
+.chatbro_messages .chatbro_message_tg {
+  top: 2px;
+  position: relative;
+  cursor: help;
+  font-family: "chatbro", serif !important
+}
+
+.chatbro_messages .chatbro_message_tg:before {
+  content: '\45'
+}
+
+.chatbro_messages .chatbro_message_actions {
+  display: inline-block;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+  right: 0;
+  visibility: hidden;
+  border-radius: 5px
+}
+
+.chatbro_messages .chatbro_message_actions div {
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 12px
+}
+
+.chatbro_messages .chatbro_message_actions .chatbro_message_action_reply {
+  font-weight: 100;
+  line-height: 18px;
+  vertical-align: super;
+  margin: 0;
+  padding: 0 10px
+}
+
+.chatbro_messages .chatbro_message_actions .chatbro_message_action_delete {
+  font-family: "chatbro", serif !important
+}
+
+.chatbro_messages .chatbro_message_actions .chatbro_message_action_delete:before {
+  content: '\63'
+}
+
+.chatbro_messages .chatbro_message_actions .chatbro_message_action_menu {
+  font-family: "chatbro", serif !important;
+  font-size: 17px;
+  margin-left: 0;
+  padding: 0 5px
+}
+
+.chatbro_messages .chatbro_message_actions .chatbro_message_action_menu:hover {
+  opacity: .8
+}
+
+.chatbro_messages .chatbro_message_actions .chatbro_message_action_menu:before {
+  content: '\30'
+}
+
+.chatbro_messages .chatbro_message_info {
+  display: inline-block
+}
+
+.chatbro_messages .chatbro_message_name {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: normal;
+  vertical-align: middle;
+  max-width: 55%;
+  line-height: 18px
+}
+
+.chatbro_messages .chatbro_message_text {
+  text-align: left;
+  font-size: 12px;
+  line-height: 150%;
+  margin: 4px 0 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-all;
+  word-break: break-word;
+  padding: 0;
+  font-weight: normal;
+  color: inherit
+}
+
+.chatbro_messages .chatbro_message_date {
+  font-size: 11px;
+  color: inherit;
+  opacity: .8;
+  margin-left: 8px;
+  font-weight: 100;
+  position: absolute;
+  top: 1px;
+  right: 0
+}
+
+.chatbro_messages .chatbro_message_close {
+  cursor: pointer;
+  font-family: "chatbro", serif !important;
+  right: -8px !important;
+  position: absolute;
+  top: -1px !important;
+  border-left: 1px solid;
+  border-bottom: 1px solid;
+  border-color: #ccc;
+  border-bottom-left-radius: 4px;
+  width: 20px;
+  text-align: center
+}
+
+.chatbro_messages .chatbro_message_close:before {
+  content: "\63";
+  display: inline;
+  font-weight: normal;
+  font-size: 15px
+}
+
+.chatbro_dropdown_menu.chatbro_movable_chat {
+  position: fixed
+}
+
+.chatbro_dropdown_menu.chatbro_unmovable_chat {
+  position: absolute;
+  z-index: 5;
+  text-align: left
+}
+
+.chatbro_smiles_menu {
+  position: absolute !important;
+  z-index: 5;
+  background-clip: padding-box;
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  display: none;
+  font-size: 12px;
+  padding: 10px 0 10px 10px;
+  background: white;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none
+}
+
+.chatbro_smiles_menu:before {
+  position: absolute;
+  bottom: -6px;
+  right: 35px;
+  z-index: -3;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 6px solid #999;
+  color: #404040;
+  content: ""
+}
+
+.chatbro_smiles_menu .chatbro_smiles {
+  position: relative;
+  overflow-y: auto
+}
+
+.chatbro_smiles_menu .chatbro_smiles::-webkit-scrollbar {
+  width: 8px
+}
+
+.chatbro_smiles_menu .chatbro_smiles::-webkit-scrollbar * {
+  background: transparent
+}
+
+.chatbro_smiles_menu .chatbro_smiles::-webkit-scrollbar-thumb {
+  background: #AAAAAA !important;
+  -webkit-overflow-scrolling: touch
+}
+
+.chatbro_smiles_menu .chatbro_smiles .chatbro_smile_wrapper {
+  display: inline-block;
+  cursor: pointer;
+  padding: 5px
+}
+
+.chatbro_smiles_menu .chatbro_smiles .chatbro_smile_wrapper:hover {
+  background-color: #DEDEDE;
+  border-radius: 3px
+}
+
+.chatbro_smiles_menu .chatbro_smiles .chatbro_smile_wrapper img {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 20px;
+  width: 20px
+}
+
+.chatbro_dropdown_menu_hack {
+  position: fixed !important;
+  left: -9999px !important;
+  display: inline !important
+}
+
+.chatbro_dropdown_menu {
+  font-size: 13px;
+  display: none;
+  min-width: 160px;
+  max-width: 286px;
+  list-style: none;
+  background-color: #FFFFFF;
+  background-clip: padding-box;
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  text-align: left;
+  z-index: 20;
+  overflow-y: auto;
+  overflow-x: hidden
+}
+
+.chatbro_dropdown_menu::-webkit-scrollbar {
+  width: 8px
+}
+
+.chatbro_dropdown_menu::-webkit-scrollbar * {
+  background: transparent
+}
+
+.chatbro_dropdown_menu::-webkit-scrollbar-thumb {
+  background: #AAAAAA !important;
+  -webkit-overflow-scrolling: touch
+}
+
+.chatbro_dropdown_menu * {
+  line-height: 19.8714px
+}
+
+.chatbro_dropdown_menu a.chatbro_logout {
+  background: inherit !important
+}
+
+.chatbro_dropdown_menu .chatbro_dropdown_admin,
+.chatbro_dropdown_menu .chatbro_dropdown_moder {
+  top: -6px;
+  position: relative;
+  padding: 1px 3px;
+  border-radius: 5px;
+  font-weight: bold;
+  border: 1px solid;
+  opacity: .5;
+  font-size: 9px;
+  margin-left: 5px;
+  display: none
+}
+
+.chatbro_dropdown_menu .chatbro_dropdown_guest {
+  top: -6px;
+  position: relative;
+  padding: 1px 3px;
+  font-weight: bold;
+  opacity: .5;
+  font-size: 11px;
+  margin-left: 5px;
+  display: none
+}
+
+.chatbro_dropdown_menu .chatbro_dropdown_admin:before {
+  content: 'adm'
+}
+
+.chatbro_dropdown_menu .chatbro_dropdown_moder:before {
+  content: 'mod'
+}
+
+.chatbro_dropdown_menu .chatbro_menu_link_ico {
+  top: 5px;
+  position: relative;
+  font-family: "chatbro", serif !important;
+  margin-right: 8px;
+  left: 0;
+  font-size: 20px;
+  line-height: 0
+}
+
+.chatbro_dropdown_menu .chatbro_menu_link_ico:before {
+  content: "\57"
+}
+
+.chatbro_dropdown_menu div a {
+  font-weight: 400;
+  line-height: 1.42857143;
+  display: block;
+  clear: both;
+  padding: 11px 15px;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+
+.chatbro_dropdown_menu div a:hover {
+  color: inherit
+}
+
+.chatbro_dropdown_menu div a img {
+  display: inline;
+  width: 20px;
+  height: 20px;
+  margin: 0 7px 0 0;
+  vertical-align: sub;
+  top: 2px;
+  position: relative
+}
+
+.chatbro_dropdown_menu .chatbro_copyright_link {
+  line-height: 1.6
+}
+
+.chatbro_dropdown_menu .chatbro_dropdown_menu_user {
+  padding: 15px;
+  border-bottom: 1px solid
+}
+
+.chatbro_dropdown_menu .chatbro_dropdown_menu_user div.chatbro_dropdown_menu_user_avatar_block {
+  display: inline-block;
+  position: relative
+}
+
+.chatbro_dropdown_menu .chatbro_dropdown_menu_user div.chatbro_dropdown_menu_user_avatar_block .chatbro_dropdown_menu_user_avatar {
+  height: 50px;
+  width: 50px;
+  margin: 0 10px 0 0;
+  border-radius: 3px;
+  display: inline-block;
+  font-size: 14px
+}
+
+.chatbro_dropdown_menu .chatbro_dropdown_menu_user div.chatbro_dropdown_menu_user_avatar_block .chatbro_guest_avatar:before {
+  content: attr(data-name);
+  top: 16px;
+  position: relative
+}
+
+.chatbro_dropdown_menu .chatbro_dropdown_menu_user div.chatbro_dropdown_menu_user_info {
+  display: inline-block;
+  vertical-align: top;
+  display: -moz-inline-stack
+}
+
+.chatbro_dropdown_menu .chatbro_dropdown_menu_user div.chatbro_dropdown_menu_user_info .chatbro_dropdown_menu_user_info_gateway {
+  font-family: "chatbro", serif !important;
+  top: -3px;
+  position: relative;
+  opacity: .6;
+  margin-left: 5px;
+  font-size: 14px
+}
+
+.chatbro_dropdown_menu .chatbro_dropdown_menu_user div.chatbro_dropdown_menu_user_info span.chatbro_guest {
+  top: -5px;
+  position: relative;
+  margin-left: 5px
+}
+
+.chatbro_dropdown_menu .chatbro_dropdown_menu_user div.chatbro_dropdown_menu_user_info span.chatbro_dropdown_menu_user_info_name {
+  max-width: 137px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 14px
+}
+
+.chatbro_dropdown_menu .chatbro_dropdown_menu_user div.chatbro_dropdown_menu_user_info a {
+  margin-top: 8px;
+  padding: 0
+}
+
+.chatbro_dropdown_menu .chatbro_dropdown_menu_link:last-of-type {
+  border-bottom: 1px solid
+}
+
+.chatbro_dropdown_menu .chatbro_dropdown_divider {
+  padding: 11px 15px;
+  font-weight: bold
+}
+
+.chatbro_dropdown_menu .chatbro_copyright {
+  font-size: 12px;
+  min-width: 200px;
+  padding: 1px 0
+}
+
+.chatbro_dropdown_menu .chatbro_copyright a {
+  margin: 0 !important;
+  padding: 1px 0 !important;
+  color: #0096cf !important;
+  text-align: center
+}
+
+.chatbro_dropdown_menu .chatbro_copyright a span {
+  font-weight: bold;
+  color: #7B7B7B
+}
+
+.chatbro_message_attachment {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 10px 0;
+  padding: 0
+}
+
+.chatbro_message_attachment a {
+  float: left
+}
+
+.chatbro_message_attachment a.chatbro_message_attachment_file .chatbro_message_attachment_file_size {
+  opacity: .7
+}
+
+.chatbro_message_attachment a.chatbro_message_attachment_file .chatbro_message_attachment_file_ico {
+  font-family: "chatbro", serif !important;
+  float: left
+}
+
+.chatbro_message_attachment a.chatbro_message_attachment_file .chatbro_message_attachment_file_ico:before {
+  content: "\67";
+  font-size: 17px;
+  margin-right: 5px
+}
+
+.chatbro_message_video_attachment {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  border: 0
+}
+
+.chatbro_message_video_attachment_click {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer
+}
+
+.chatbro_message_video_attachment_preview {
+  position: relative;
+  width: 100%;
+  max-width: 100%
+}
+
+.chatbro_message_video_attachment_start_play {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  max-width: 20%;
+  content: url(//chatbro.com/images/start.png)
+}
+
+.chatbro_message_photo_attachment_preview {
+  width: 100%;
+  max-width: 100%
+}
+
+.chatbro_participants {
+  padding: 5px 8px 5px 12px;
+  border-top: 1px solid #D8D8D8;
+  background-color: #FFFFFF;
+  overflow-y: auto;
+  max-height: 81px
+}
+
+.chatbro_participants::-webkit-scrollbar {
+  width: 8px
+}
+
+.chatbro_participants::-webkit-scrollbar * {
+  background: transparent
+}
+
+.chatbro_participants::-webkit-scrollbar-thumb {
+  background: #AAAAAA !important;
+  -webkit-overflow-scrolling: touch
+}
+
+.chatbro_participants a {
+  vertical-align: top
+}
+
+.chatbro_participant {
+  width: 29px;
+  height: 29px;
+  margin: 1px 2px;
+  border-radius: 4px;
+  display: inline-block
+}
+
+.chatbro_bottom_border {
+  border-bottom: 2px solid
+}
+
+.chatbro_participant_admin {
+  cursor: pointer
+}
+
+.new_messages_count_wrapper {
+  display: inline-block;
+  font-size: 9px;
+  margin-right: 3px
+}
+
+.new_messages_count_wrapper:after {
+  content: '\00a0 '
+}
+
+.new_messages_count_wrapper:before {
+  content: '\6a';
+  font-size: 13px;
+  vertical-align: middle;
+  position: relative;
+  top: 1px
+}
+
+.chatbro_participant_count_wrapper {
+  display: inline-block
+}
+
+.new_messages_count {
+  font-size: 13px;
+  margin: 0 4px
+}
+
+span.chatbro_chat_name {
+  white-space: nowrap;
+  text-overflow: ellipsis
+}
+
+.chatbro_resizer {
+  height: 10px;
+  width: 100%;
+  background: transparent;
+  position: absolute;
+  bottom: -10px;
+  left: 0
+}
+
+.chatbro_link {
+  font-size: 12px;
+  height: 18px;
+  line-height: 18px
+}
+
+.chatbro_link a {
+  text-decoration: underline;
+  color: inherit;
+  cursor: pointer;
+  float: right;
+  margin-right: 19px;
+  opacity: .7
+}
+
+.chatbro_link a:hover {
+  opacity: .9;
+  color: inherit
+}
+
+.chatbro_send {
+  border-top: none;
+  background-color: #FFFFFF;
+  line-height: 22.9286px
+}
+
+.chatbro_send .chatbro_loader_radial {
+  display: none;
+  position: absolute;
+  top: 4px;
+  left: 14px;
+  text-indent: -9999em;
+  border: 4px solid rgba(120, 120, 120, 0.2);
+  border-left-color: #6594C6;
+  transform: translateZ(0);
+  animation: chatbro_loader_radial 1.1s infinite linear
+}
+
+.chatbro_send .chatbro_loader_radial,
+.chatbro_send .chatbro_loader_radial:after {
+  border-radius: 50%;
+  width: 25px;
+  height: 25px
+}
+
+@keyframes chatbro_loader_radial {
+  0% {
+    transform: rotate(0deg)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+.chatbro_send .chatbro_send_input_preview {
+  display: none;
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: 70px;
+  padding: 5px;
+  white-space: nowrap;
+  border-top: 1px solid;
+  background-color: #ffffff;
+  text-align: left
+}
+
+.chatbro_send .chatbro_send_input_preview::-webkit-scrollbar {
+  height: 8px
+}
+
+.chatbro_send .chatbro_send_input_preview::-webkit-scrollbar * {
+  background: transparent
+}
+
+.chatbro_send .chatbro_send_input_preview::-webkit-scrollbar-thumb {
+  background: #AAAAAA !important;
+  -webkit-overflow-scrolling: touch
+}
+
+.chatbro_send .chatbro_send_input_preview .chatbro_send_input_preview_attachment {
+  height: 100%;
+  position: relative;
+  display: inline-block;
+  margin: 0 5px
+}
+
+.chatbro_send .chatbro_send_input_preview .chatbro_send_input_preview_attachment img.chatbro_send_input_preview_attachment_img {
+  height: 59px;
+  vertical-align: middle
+}
+
+.chatbro_send .chatbro_send_input_preview .chatbro_send_input_preview_attachment div.chatbro_send_input_preview_attachment_close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 14px;
+  width: 14px
+}
+
+.chatbro_send .chatbro_send_input_preview .chatbro_send_input_preview_attachment div.chatbro_send_input_preview_attachment_close:before {
+  content: "\63";
+  cursor: pointer;
+  font-weight: normal;
+  font-size: 14px;
+  background: #5F5F5F;
+  color: white;
+  border-radius: 4px;
+  position: relative;
+  top: -4px;
+  font-family: "chatbro", serif !important
+}
+
+.chatbro_send .chatbro_send_input_preview .chatbro_send_input_preview_attachment div.chatbro_send_input_preview_attachment_progress {
+  text-align: center;
+  background: black;
+  color: white;
+  opacity: .7;
+  font-size: 11px;
+  position: absolute;
+  width: 100%;
+  font-weight: bold;
+  bottom: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 0 5px;
+  text-overflow: ellipsis;
+  cursor: pointer
+}
+
+.chatbro_send .chatbro_send_input_block {
+  min-height: 37px;
+  position: relative;
+  border-top: 1px solid
+}
+
+.chatbro_send .chatbro_send_input_block .chatbro_send_wait {
+  background: url(//chatbro.com/images/chat/chatbro_image_bar.gif) no-repeat left 47% !important;
+  background-size: 27px 27px;
+  cursor: default !important
+}
+
+.chatbro_send .chatbro_send_input_block .chatbro_image_question {
+  cursor: help !important
+}
+
+.chatbro_send .chatbro_send_input_block .chatbro_send_button,
+.chatbro_send .chatbro_send_input_block .chatbro_open_smiles_button {
+  font-family: "chatbro", serif !important;
+  position: relative;
+  text-align: center;
+  padding: 6px 0;
+  float: right;
+  width: 41px;
+  height: 35px;
+  cursor: pointer;
+  opacity: .6;
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  background-size: auto !important;
+  font-size: 20px
+}
+
+.chatbro_send .chatbro_send_input_block .chatbro_send_button:hover,
+.chatbro_send .chatbro_send_input_block .chatbro_open_smiles_button:hover {
+  opacity: .99
+}
+
+.chatbro_send .chatbro_send_input_block .chatbro_open_smiles_button {
+  font-size: 22px;
+  top: 1px
+}
+
+.chatbro_send .chatbro_send_input_block .chatbro_open_smiles_button:before {
+  content: "\62"
+}
+
+.chatbro_send .chatbro_send_input_block .chatbro_send_button {
+  width: 49px
+}
+
+.chatbro_send .chatbro_send_input_block .chatbro_send_button:before {
+  content: "\47"
+}
+
+.chatbro_send .chatbro_send_input_block label.chatbro_open_upload_button {
+  position: relative;
+  top: -1px;
+  opacity: .6;
+  float: left !important;
+  width: 58px !important;
+  height: 35px !important;
+  background-size: auto !important;
+  margin: 1px 0 0 0 !important;
+  font-size: 25px !important;
+  font-weight: normal !important;
+  display: inline-block;
+  cursor: pointer !important;
+  line-height: 22.9286px !important;
+  padding: 0
+}
+
+.chatbro_send .chatbro_send_input_block label.chatbro_open_upload_button input.chatbro_file_select_input {
+  display: none !important
+}
+
+.chatbro_send .chatbro_send_input_block label.chatbro_open_upload_button:hover {
+  opacity: .99
+}
+
+.chatbro_send .chatbro_send_input_block label.chatbro_open_upload_button:before {
+  font-family: "chatbro", serif !important;
+  content: "\4b";
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  background: inherit;
+  text-overflow: ellipsis;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 32px !important;
+  top: 2px
+}
+
+.chatbro_send .chatbro_send_input_block .chatbro_send_input_wrapper {
+  padding-right: 90px;
+  padding-left: 58px;
+  position: initial
+}
+
+.chatbro_send .chatbro_send_input_block .chatbro_send_input_wrapper [contentEditable=true]:empty:not(:focus):before,
+.chatbro_send .chatbro_send_input_block .chatbro_send_input_wrapper [contentEditable=false]:empty:not(:focus):before {
+  content: attr(data-ph);
+  color: inherit;
+  opacity: .7
+}
+
+.chatbro_send .chatbro_send_input_block .chatbro_send_input_wrapper .chatbro_send_input {
+  font-size: 13px;
+  width: 100%;
+  margin: 0 !important;
+  padding: 8px 1px !important;
+  max-height: 88px;
+  overflow-y: auto;
+  text-align: left;
+  line-height: 19px
+}
+
+.chatbro_send .chatbro_send_input_block .chatbro_send_input_wrapper .chatbro_send_input::-webkit-scrollbar {
+  width: 8px
+}
+
+.chatbro_send .chatbro_send_input_block .chatbro_send_input_wrapper .chatbro_send_input::-webkit-scrollbar * {
+  background: transparent
+}
+
+.chatbro_send .chatbro_send_input_block .chatbro_send_input_wrapper .chatbro_send_input::-webkit-scrollbar-thumb {
+  background: #AAAAAA !important;
+  -webkit-overflow-scrolling: touch
+}
+
+.chatbro_send .chatbro_send_input_block .chatbro_send_input_wrapper .chatbro_send_input:focus {
+  outline: none;
+  box-shadow: none
+}
+
+.chatbro_frame {
+  position: absolute;
+  z-index: 899999
+}
+
+.chatbro_frame_left_top {
+  top: -6px;
+  left: -6px;
+  width: 10px;
+  height: 10px;
+  cursor: nw-resize
+}
+
+.chatbro_frame_top {
+  top: -6px;
+  width: 100%;
+  height: 10px;
+  cursor: n-resize
+}
+
+.chatbro_frame_right_top {
+  top: -6px;
+  right: -6px;
+  width: 10px;
+  height: 10px;
+  cursor: ne-resize
+}
+
+.chatbro_frame_left {
+  left: -6px;
+  width: 10px;
+  height: 100%;
+  cursor: w-resize
+}
+
+.chatbro_frame_right {
+  right: -10px;
+  width: 10px;
+  height: 100%;
+  cursor: e-resize
+}
+
+.chatbro_frame_left_bottom {
+  bottom: -6px;
+  left: -6px;
+  width: 10px;
+  height: 10px;
+  cursor: sw-resize
+}
+
+.chatbro_frame_right_bottom {
+  right: -6px;
+  bottom: -6px;
+  width: 10px;
+  height: 10px;
+  cursor: se-resize
+}
+
+.chatbro_frame_bottom {
+  bottom: -6px;
+  width: 100%;
+  height: 10px;
+  cursor: s-resize
+}
+
+.unselectable {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none
+}
+
+.chatbro_paginator {
+  width: 100%;
+  height: 33px;
+  border-top: 1px solid #D8D8D8;
+  border: none
+}
+
+.chatbro_paginator button {
+  font-size: 16px;
+  font-weight: bold;
+  height: 22px;
+  padding: 0 21px !important;
+  color: #2A2A2A;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  background: #EDEDED;
+  margin: 5px 12px
+}
+
+.chatbro_paginator .chatbro_paginator_prev {
+  float: left
+}
+
+.chatbro_paginator .chatbro_paginator_next {
+  float: right
+}
+
+#wrap {
+  margin-top: -50px !important;
+  height: 100%;
+}
+.content {
+  top: 44px;
+  height: calc(100% - 44px) !important;
+}
+.market-name-container {
+height: 40px;
+width: 130px;
+margin-top: 0px;
+border-left: 2px solid #222222;
+border-right: 2px solid #222222;
+float: left;
+z-index: -10;
+margin-top: -5px;
+padding-right: 16px;
+}
+.market-name-container:hover {
+cursor: pointer;
+}
+.market-name {
+height: 40px;
+line-height: 40px;
+width: 125px;
+color: #ffffff;
+background-color: transparent;
+border: none;
+margin: 0;
+}
+.market-name span {
+float: left;
+padding-left: 13px;
+}
+.market-name:hover, .market-name:focus, .market-name:active {
+color: #ffffff;
+text-decoration: none;
+}
+.account-summary-container {
+height: 40px;
+width: 200px;
+margin-top: -5px;
+float: right;
+color: #ffffff;
+line-height: 40px;
+padding-left: 15px;
+}
+.account-summary-container a {
+text-decoration: none;
+font-family: arial;
+color: #ffffff;
+padding-right: 5px;
+}
+.account-summary-container span {
+padding-right: 5px;
+}
+.account-summary-container a:hover {
+color: #ffffff;
+}
+.navbar-right {
+position: absolute;
+right: 40px !important;
+margin-top: 5px;
+width: 330px !important;
+}
+.market-btn {
+width: 130px;
+height: 40px;
+background-color: transparent;
+margin-top: -4px;
+float: left;
+position: absolute;
+right: 200px;
+z-index: 100;
+}
+.market-btn:hover {
+cursor: pointer !important;
+}
+.market-btn:hover + .market-name-container {
+cursor: pointer;
+background-color: rgb(32, 38, 43);
+}
+#market_list {
+/*top: 37px;
+left: unset;
+right: 200px !important;
+width: 304px;
+height: 252px;
+z-index: 1;
+font-family: arial;*/
+}
+.market-list {
+background-color: rgb(32, 38, 43);
+border: 2px solid #000000;
+border-radius: 0;
+}
+.market-list g {
+color: inherit;
+}
+.market-list .panel-body-head {
+background-color: rgb(47, 56, 63);
+height: 34px;
+}
+.market-list th {
+color: #ffffff;
+font-weight: normal;
+text-align: left;
+font-size: 13px;
+}
+.market-list .markets td {
+font-size: 13px !important;
+width: 96px;
+}
+.market-list tbody .price {
+text-align: left !important;
+padding-left: 11px !important;
+}
+.market-list .change {
+text-align: right !important;
+}
+.market-list table tr {
+padding: 5px 5px 5px 5px !important;
+font-size: 14px;
+}
+.market-list table tr a {
+color: #ffffff;
+font-weight: lighter;
+}
+.market-list table tr a:hover, .market-list table tr a:focus, .market-list table tr a:active {
+text-decoration: none;
+color: #ffffff;
+}
+.market-list table tbody tr:hover, .market-list table tbody tr:focus, .market-list table tbody tr:active {
+background-color: #000000 !important;
+cursor: pointer;
+}
+#market_list .panel-body-head {
+border-bottom: 1px solid #000000;
+border-top: 1px solid #000000;
+margin-top: 34px;
+line-height: 34px;
+}
+#market_list .panel-body-content {
+/*height: 180px !important;*/
+}
+.market-list {
+display: none;
+}
+.show {
+display: block !important;
+}
+.hide {
+display: none !important;
+}
+.fill {
+color: inherit !important;
+}
+.highlight {
+background-color: transparent !important;
+}
+.info-container {
+height: 40px;
+float: left;
+text-align: left !important;
+margin-right: 10px;
+}
+.info-name {
+color: #AAACAF !important;
+}
+.info-container span {
+font-family: arial !important;
+font-size: 13px;
+margin: 0 !important;
+text-align: left;
+}
+.vol, .high, .low, .change {
+height: 20px !important;
+}
+.arrow-down {
+height: 0;
+width: 0;
+border-left: 6px solid transparent;
+border-right: 6px solid transparent;
+border-top: 6px solid #ffffff;
+top: 12px;
+margin-left: 8px;
+margin-top: 17px;
+z-index: 0;
+float: right;
+}
+.arrow-up {
+height: 0;
+width: 0;
+border-left: 6px solid transparent;
+border-right: 6px solid transparent;
+border-bottom: 6px solid #ffffff;
+margin-left: 8px;
+margin-top: 17px;
+display: none;
+z-index: 0;
+float: right;
+}
+.filter-markets {
+z-index: 1000;
+height: 34px;
+background-color: rgb(32, 38, 43);
+float: left;
+width: 100%;
+}
+.filter-markets ul {
+list-style: none;
+width: 100%;
+float: left;
+height: 100%;
+padding: 0;
+}
+#base_pair_menu li {
+float: left;
+height: 100%;
+line-height: 100%;
+width: calc(100% / 3);
+text-align: center;
+border-right: 1px solid #000000;
+color: #ffffff;
+padding: 2px 0;
+}
+#base_pair_menu li:last-child {
+border-right: none;
+}
+.filter-markets li:hover {
+cursor: pointer;
+}
+.filter-markets ul li.active {
+background-color: rgb(47, 56, 63);
+font-weight: bold;
+color: #ffffff;
+}
+.filter-markets li a {
+font-size: 11px;
+line-height: 11px;
+color: inherit;
+}
+.filter-markets li a:hover, .filter-markets li a:focus {
+text-decoration: none;
+}
+#base_pair_menu li img {
+width: 24px;
+height: 24px;
+margin-left: -4px;
+border-radius: 100%;
+margin-top: -2px;
+}
+#base_pair_menu li span {
+width: 60px;
+margin-left: 6px;
+text-align: center;
+font-size: 12px;
+line-height: 30px; 
+}
+.beta-stamp {
+margin: 0;
+padding: 1px 5px;
+border-radius: 10px;
+background-color: #FF370C;
+color: #ffffff;
+font-weight: 800;
+font-size: 10px;
+position: absolute;
+left: 160px;
+top: 22px;
+line-height: 15px;
+}
+#chart_header {
+height: 30px;
+/*background-color: rgb(47, 56, 63);*/
+background-color: #0f182b;
+width: calc(100% - 588px) !important;
+z-index: 1000;
+border-bottom: 1px solid #000000;
+}
+.chart-tabs {
+float: right;
+font-size: 12px;
+font-family: arial;
+background-color: transparent !important;
+line-height: 30px;
+height: 30px;
+z-index: 100;
+}
+.chart-link {
+border-bottom: none;
+border-left: 1px solid #000000;
+height: 30px !important;
+line-height: 30px !important;
+padding: 0 10px;
+float: left;
+color: #ccc;
+}
+.chart-tabs .chart-link:hover, .chart-tabs .chart-link:focus {
+text-decoration: none;
+cursor: pointer;
+color: #ccc;
+}
+.chart-tabs .chart-link.active {
+background-color: rgb(38, 45, 51);
+border-bottom: none;
+color: #ffffff;
+font-weight: bold;
+}
+.chart-arrow-down {
+height: 0;
+width: 0;
+border-left: 4px solid transparent;
+border-right: 4px solid transparent;
+border-top: 4px solid #0079f1;
+margin-top: 13px;
+margin-left: 8px;
+z-index: 0;
+float: left;
+}
+.chart-arrow-up {
+height: 0;
+width: 0;
+border-left: 4px solid transparent;
+border-right: 4px solid transparent;
+border-bottom: 4px solid #0079f1;
+margin-left: 8px;
+margin-top: 13px;
+z-index: 0;
+float: left;
+}
+#range_switch .active, #indicator_switch .active {
+background-color: transparent !important;
+border-bottom: none;
+}
+#range_switch {
+font-size: 12px;
+font-family: arial;
+top: 0;
+left: 20px;
+}
+#range_switch li {
+border-right: 1px solid #000000;
+border-left: 1px solid #000000;
+margin: 0;
+float: left;
+padding: 0;
+}
+#range_switch li:hover {
+cursor: pointer;
+}
+#range_switch li a {
+color: #ccc;
+float: left;
+width: 45px;
+height: 28px;
+}
+#range__switch li a:hover {
+color: #ccc;
+}
+#time_choices {
+display: none;
+position: absolute;
+top: 29px;
+z-index: 1000;
+border-bottom: 1px solid #000000;
+width: 45px;
+}
+#time_choices li {
+background-color: rgb(47, 56, 63);
+border-top: 1px solid #000000;
+border-left: 1px solid #000000;
+float: left;
+width: 45px;
+height: 28px;
+line-height: 28px;
+}
+.range-dropper {
+width: 45px;
+color: #ccc;
+margin-left: 10px;
+line-height: 30px;
+}
+.range-dropper span {
+margin-left: 12px;
+float: left;
+}
+#range_switch li a.active {
+color: #ffffff;
+font-weight: bold;
+}
+#indicator_switch_wrapper {
+font-family: arial;
+font-size: 12px;
+top: 0;
+color: #ccc;
+float: left;
+margin: 0;
+left: 65px;
+}
+#indicator_switch_wrapper #type_switch li, #indicator_switch_wrapper #main_indicator_switch li, #indicator_switch_wrapper #indicator_switch li {
+border-right: 1px solid #000000;
+padding: 0 10px !important;
+float: left;
+color: #0079f1;
+}
+#indicator_switch_wrapper li {
+padding: 0;
+float: left;
+color: #ccc;
+}
+#indicator_switch_wrapper li a {
+width: 100%;
+height: 100%;
+}
+#indicator_switch_wrapper li:hover {
+cursor: pointer;
+}
+#indicator_switch_wrapper li a:hover {
+color: #ccc;
+}
+#indicator_switch_wrapper li a.active {
+color: #ffffff;
+font-weight: bold;
+}
+#type_choices {
+display: none;
+position: absolute;
+top: 29px;
+z-index: 1000;
+border-bottom: 1px solid #000000;
+left: 0px;
+width: 94px;
+left: -6px;
+}
+#type_choices li {
+background-color: rgb(47, 56, 63);
+border-top: 1px solid #000000;
+border-left: 1px solid #000000;
+float: left;
+width: 94px;
+height: 28px;
+line-height: 28px;
+padding: 0 !important;
+}
+#indicator_choices {
+display: none;
+position: absolute;
+top: 29px;
+z-index: 1000;
+border-bottom: 1px solid #000000;
+width: 90px;
+margin-left: 4px;
+}
+#indicator_choices li {
+background-color: rgb(47, 56, 63);
+border-top: 1px solid #000000;
+border-left: 1px solid #000000;
+float: left;
+width: 90px;
+height: 28px;
+line-height: 28px;
+}
+.type-dropper {
+width: 94px;
+line-height: 30px;
+left: 65px;
+margin-left: 4px;
+}
+.type-dropper span {
+margin-left: 18px;
+float: left;
+}
+.indicator-dropper {
+/*width: 94px;*/
+color: #0079f1;
+line-height: 30px;
+left: 155px;
+}
+.indicator-dropper span {
+margin-left: 10px;
+float: left;
+}
+#market_trades {
+/*left: calc(100% - 290px);
+top: 0px !important;
+height: calc(100% - 308px) !important;
+min-height: 200px;
+font-family: arial;
+width: 290px !important;
+z-index: 0 !important;
+background-color: rgb(38, 45, 51) !important;
+overflow: hidden;*/
+height: 100% !important;
+}
+#market_trades .panel-body-head {
+width: 290px !important;
+background-color: rgb(47, 56, 63);
+border-bottom: 1px solid #000000 !important;
+padding: 9px 12px 7px !important;
+color: #ffffff;
+height: 30px;
+}
+#market_trades .panel-body-head th {
+color: #ccc;
+font-weight: normal;
+line-height: 100%;
+height: 100%;
+}
+#market_trades .panel-body-head th.at {
+width: 94px !important;
+text-align: left;
+}
+#market_trades .panel-body-head th.amount {
+width: 84px !important;
+text-align: left;
+}
+#market_trades .panel-body-head th.volume {
+text-align: right !important;
+width: 80px !important;
+}
+.trade-panel {
+border: none !important;
+width: 100% !important;
+height: 100% !important;
+min-height: 200px !important;
+background-color: rgb(38, 45, 51);
+}
+.trade-body {
+width: 100% !important;
+height: calc(100% - 30px) !important;
+min-height: 200px !important;
+background-color: rgb(38, 45, 51);
+padding: 2px 8px !important;
+}
+#market_trades .trade-body td.time {
+text-align: left !important;
+width: 68px !important;
+}
+#market_trades .trade-body td.my {
+text-align: left !important;
+width: 20px !important;
+}
+#market_trades .trade-body td.price {
+width: 90px !important;
+text-align: left !important;
+}
+#market_trades .trade-body td.volume {
+width: 88px !important;
+text-align: right !important;
+font-size: 9px;
+}
+#market_trades g {
+color: inherit;
+}
+.new {
+background-color: transparent !important;
+transition: 0s !important;
+}
+#market_trades td {
+padding: 0 !important;
+}
+#my_orders {
+/*left: 0 !important;
+width: calc(100% - 588px);
+min-width: 582px;
+bottom: 0;
+height: calc(25% + 20px) !important;
+min-height: 130px;
+background-color: rgb(38, 45, 51);
+border: none;
+border-radius: 0;
+font-family: arial;
+z-index: 1;*/
+}
+.my-orders-subheader {
+width: 100%;
+height: 25px;
+background-color: rgb(32, 38, 43);
+border-bottom: 1px solid #000000;
+font-size: 12px;
+}
+.my-orders-subheader ul {
+list-style: none;
+width: 100%;
+line-height: 25px;
+padding: 0 13px;
+margin: 0;
+}
+.my-orders-subheader ul li {
+float: left;
+width: 20%;
+border-right: 1px solid #000000;
+}
+.my-orders-subheading {
+padding-left: 15px;
+}
+#my_orders table tbody td {
+width: 20% !important;
+padding: 0 0 2px 5px !important;
+margin: 0 !important;
+text-align: left !important;
+font-size: 12px !important;
+}
+#my_orders table tbody tr:hover {
+cursor: pointer;
+}
+#my_orders g {
+color: inherit;
+}
+#my_orders .label-bid {
+background-color: #53B987 !important;
+}
+#my_orders .label-ask {
+background-color: #B96053 !important;
+}
+#my_orders .kind, #my_orders .price, #my_orders .volume {
+padding-left: 15px !important;
+}
+#my_orders .amount {
+padding-left: 13px !important;
+}
+.clear-orders-btn {
+float: right;
+font-size: 12px;
+color: #ffffff;
+padding-right: 5px;
+display: none;
+}
+.clear-orders-btn a {
+color: #ffffff !important;
+}
+.clear-orders-btn a:hover, .clear-orders-btn a:focus, .clear-orders-btn a:active {
+cursor: pointer !important;
+text-decoration: none !important;
+color: #ffffff !important;
+}
+#my_orders_header {
+/*background-color: rgb(47, 56, 63);
+color: #ffffff;
+height: 30px;
+width: 100%;
+padding: 0;
+border-bottom: none;
+border-bottom: 1px solid #000000;*/
+}
+#my_orders_header ul {
+width: 100%;
+height: 100%;
+line-height: 30px;
+list-style: none;
+padding: 0;
+font-size: 12px;
+}
+#my_orders_header ul li {
+float: left;
+height: 100%;
+padding: 0 15px;
+border-right: 1px solid #000000;
+}
+#my_orders_header ul li:hover {
+cursor: pointer;
+}
+#my_orders_header ul li.active {
+font-weight: bold;
+background-color: rgb(38, 45, 51);
+color: #ffffff;
+}
+#my_orders .my-orders-tabcontent {
+height: calc(100% - 30px);
+}
+#my_orders_funds {
+z-index: 100;
+left: 0;
+bottom: 0;
+height: calc(25% - 10px);
+min-height: 100px;
+position: absolute;
+font-family: arial;
+width: calc(100% - 588px);
+min-width: 600px;
+}
+#account_summary {
+height: 100%;
+}
+.total-funds {
+float: right;
+color: #ffffff;
+height: 25px;
+font-size: 12px;
+margin-right: 15px;
+}
+.total-funds span {
+line-height: 25px;
+}
+.funds-table {
+height: 100%;
+margin: 0 !important;
+overflow: scroll;
+}
+#account_summary table tbody tr td {
+float: left;
+width: 20%;
+border: none;
+padding: 0 0 0 15px;
+font-size: 12px;
+}
+#account_summary .account-balance {
+padding-left: 24px;
+}
+#account_summary .account-locked-balance {
+padding-left: 18px;
+}
+.view_all_accounts {
+font-size: 12px;
+text-decoration: underline;
+}
+.view_all_accounts:hover {
+cursor: pointer;
+}
+#account_summary .panel-body-content .empty-row {
+position: absolute;
+top: 32%;
+width: 99%;
+height: 0;
+padding: 0;
+color: #777777;
+}
+.new-trade-header {
+height: 30px;
+background-color: rgb(47, 56, 63);
+bottom: 274px;
+right: 0;
+width: 584px;
+position: absolute;
+z-index: 100;
+border-bottom: 1px solid #000000;
+font-size: 12px;
+font-family: arial;
+}
+.new-trade-header ul {
+list-style: none;
+line-height: 30px;
+padding: 0;
+margin: 0;
+}
+.new-trade-link {
+float: left;
+padding: 0 15px;
+border-right: 1px solid #000000;
+color: #ccc;
+height: 30px;
+}
+.new-trade-header .active {
+border-bottom: 1px solid rgb(38, 45, 51);
+background-color: rgb(38, 45, 51);
+color: #ffffff;
+font-weight: bold;
+}
+.new-trade-link:hover, .new-trade-link:focus {
+cursor: pointer;
+}
+#bid_entry label, #ask_entry label {
+/*background-color: transparent;
+border: none;
+text-align: left !important;
+min-width: 110px !important;
+width: 110px;
+font-size: 13px;
+color: #ccc;
+padding: 3px 6px 0px 6px;*/
+}
+#bid_entry .form-control, #ask_entry .form-control {
+/*width: 142px !important;*/
+/*border: 1px solid rgb(64, 75, 85) !important;*/
+/*background-color: rgb(47, 56, 63);*/
+font-size: 13px;
+text-align: right;
+color: #ffffff;
+border-radius: 1px;
+padding: 8px 6px 4px 24px;
+}
+#bid_entry .hint-positions, #ask_entry .hint-positions, #bid_entry .hint-price-disadvantage, #ask_entry .hint-price-disadvantage {
+margin-left: 2px !important;
+font-size: 13px;
+left: 0px !important;
+}
+#market_bid_entry label, #market_ask_entry label {
+background-color: transparent;
+border: none;
+text-align: left !important;
+min-width: 110px !important;
+width: 110px;
+font-size: 13px;
+color: #ccc;
+padding: 3px 6px 0px 6px;
+}
+#market_bid_entry .form-control, #market_ask_entry .form-control {
+width: 142px !important;
+border: 1px solid rgb(64, 75, 85) !important;
+background-color: rgb(47, 56, 63);
+font-size: 13px;
+text-align: right;
+color: #ffffff;
+padding: 8px 6px 4px 24px;
+border-radius: 1px;
+}
+#market_bid_entry .hint-positions, #market_ask_entry .hint-positions, #market_bid_entry .hint-price-disadvantage, #market_ask_entry .hint-price-disadvantage {
+margin-left: 44px !important;
+font-size: 13px;
+}
+.current-balance {
+font-family: arial !important;
+font-size: 13px;
+}
+.status-danger i, .status-success i, .status-info i  {
+font-family: arial !important;
+font-size: 13px !important;
+}
+#ask_entry .label.label-info, #bid_entry .label.label-info {
+color: #4083C4;
+}
+.no-user-btn {
+height: 40px;
+width: 252px;
+background-color: rgb(32, 38, 43);
+border: 1px solid #000000;
+text-align: center;
+}
+.no-user-btn span {
+line-height: 40px;
+font-size: 13px;
+}
+.no-user-btn span a {
+color: #ffffff;
+font-weight: bold;
+}
+.no-user-btn span a:hover, .no-user-btn span a:active, .no-user-btn span a:focus {
+color: #ffffff;
+text-decoration: none;
+}
+#market_bid_entry .no-user-btn, #market_ask_entry .no-user-btn {
+margin-top: 15px;
+}
+#market_bid_entry .btn:active, #market_bid_entry .btn:focus, #market_ask_entry .btn:active, #market_ask_entry .btn:focus {
+outline: none;
+}
+#market_bid_entry button:active, #market_ask_entry button:active {
+background-color: #777 !important;
+}
+.fa-times:before {
+display: none;
+}
+.fa-check:before {
+display: none;
+}
+
+#order_book {
+/*right: 294px;*/
+top: 0;
+background-color: rgb(38, 45, 51);
+border: none;
+border-radius: 0;
+/*width: 290px !important;*/
+height: calc(100% - 308px) !important;
+min-height: 200px;
+font-family: arial;
+overflow: hidden;
+}
+.orders {
+height: calc(50% - 35px) !important;
+overflow: hidden;
+}
+.orders:hover {
+cursor: pointer;
+}
+#order_book .panel-body {
+overflow: hidden;
+padding: 0 !important
+}
+.panel-body-content {
+overflow: hidden;
+}
+#order_book .panel-body-head {
+height: 50px !important;
+}
+.bid-ask-tabs {
+height: 29px;
+float: left;
+width: 100%;
+padding: 4px;
+}
+.bid-ask-tabs ul {
+list-style: none;
+margin: 0;
+padding: 0;
+height: 100%;
+}
+.bid-ask-tabs ul li {
+float: left;
+margin-right: 5px;
+height: 100%;
+width: 25px;
+padding: 2px;
+}
+.bid-ask-tabs ul li:hover {
+cursor: pointer;
+}
+.bid-ask-tabs ul li img {
+width: 100%;
+height: 100%;
+}
+.bid-ask-tabs ul li.active {
+border: 1px solid #ccc;
+}
+#order_book_header {
+/*width: 290px !important;
+margin: 0 !important;
+height: 20px;
+float: left;
+padding: 3px 6px;
+border-top: 1px solid #000000;
+background-color: rgb(32, 38, 43);*/
+}
+#order_book_header th {
+font-size: 8px;
+padding: 0 !important;
+font-weight: normal;
+color: #ccc !important;
+line-height: 100%;
+height: 100%;
+}
+#order_book_header th.price {
+text-align: left !important;
+width: 94px !important;
+}
+#order_book_body td.price {
+text-align: left !important;
+width: 104px !important;
+padding-left: 8px !important;
+}
+#order_book_body td.amount {
+width: 92px !important;
+text-align: right !important;
+padding-right: 8px !important;
+}
+#order_book_header th.amount {
+width: 76px;
+text-align: left;
+}
+#order_book_header th.volume {
+width: 88px;
+text-align: right;
+}
+#order_book_body td.volume {
+text-align: left !important;
+width: 70px !important;
+}
+#order_book_body {
+width: 290px !important;
+padding: 2px 0 !important;
+margin: 0;
+overflow: hidden !important;
+}
+#order_book td {
+padding: 0 !important;
+}
+#order_book td:hover{
+font-weight: bold !important;
+}
+.bids {
+direction: rtl !important;
+}
+#order_book g {
+color: inherit !important;
+}
+.text-up {
+color: #1d9125 !important;
+font-weight: bolder;
+}
+.text-down {
+color: #921250 !important;
+font-weight: bolder;
+}
+.obsolete {
+display: none !important;
+}
+.bids-div {
+height: calc(100% - 89px) !important;
+margin-top: 39px !important;
+}
+.bids-table {
+position: relative !important;
+height: calc(100% - 39px) !important;
+}
+.asks-div {
+height: calc(100% - 89px) !important;
+margin-top: 0 !important;
+}
+.asks-table {
+position: relative !important;
+height: calc(100% - 39px) !important;
+}
+#ticker {
+width: 100%;
+/*border: none;
+border-radius: 0;
+background-color: rgb(32, 38, 43) !important;
+height: 40px !important;
+right: 0;
+font-weight: bold;
+border-top: 1px solid #000000;
+border-bottom: 1px solid #000000;*/
+}
+.ticker-container {
+top: calc(50% + 5px) !important;
+}
+.bids-ticker-container {
+top: 49px !important;
+}
+.asks-ticker-container {
+top: calc(100% - 39px) !important;
+}
+.hint {
+font-family: arial;
+font-size: 12px;
+}
+.price {
+font-family: arial;
+font-size: 9px;
+}
+.last {
+padding: 0px 0 0 0 !important;
+height: 40px;
+line-height: 40px !important;
+/*width: 290px;*/
+}
+#ticker .bid, #ticker .ask {
+margin-top: 4px;
+}
+#ticket_last_price {
+width: 290px !important;
+height: 38px !important;
+margin-top: 2px;
+}
+#table_orderbook_asks {
+position: absolute;
+bottom: calc(50% - 4px);
+z-index: 1;
+}
+#table_orderbook_bids {
+position: absolute;
+}
+.hide {
+display: none !important;
+}
+#candlestick {
+top: 30px;
+/*background-color: rgb(38, 45, 51) !important;*/
+background-color:#0f182b !important;
+height: calc(75% - 54px) !important;
+left: 0 !important;
+width: calc(100% - 588px) !important;
+min-width: 582px;
+min-height: 384px;
+border: none;
+position: absolute;
+}
+#depths_wrapper {
+top:0px;
+/*height: calc(75% - 54px);*/
+left: 0 !important;
+/*width: calc(100% - 588px);*/
+/*min-width: 582px;
+min-height: 384px;*/
+background-color: rgb(38, 45, 51) !important;
+border: none;
+border-top-right-radius: 0;
+border-top-left-radius: 0;
+}
+#depths {
+width: 100%;
+height: 100%;
+background-color: rgb(38, 45, 51) !important;
+}
+.tabcontent {
+display: none;
+}
+#depths_wrapper .panel-body-content {
+height: 100%;
+width: 100%;
+}
+#depths .highcharts-container {
+width: calc(100% - 10px) !important;
+height: 100% !important;
+}
+#depths .highcharts-container svg {
+width: 100% !important;
+height: 100% !important;
+}
+#depths .highcharts-container svg rect {
+width: 100% !important;
+height: 100% !important;
+}
+.highcharts-series-group {
+width: 100% !important;
+height: 100% !important;
+}
+.highcharts-axis, .highcharts-grid {
+width: 100% !important;
+height: 100% !important;
+}
+#candlestick .highcharts-tooltip {
+float: left !important;
+padding: 0 !important;
+}
+#trading_view_wrapper {
+top: 30px;
+background-color: rgb(38, 45, 51) !important;
+height: calc(75% - 54px) !important;
+left: 0 !important;
+width: calc(100% - 588px) !important;
+min-width: 582px;
+min-height: 384px;
+border: none;
+position: absolute;
+}
+#trading_view_wrapper .panel-body-content {
+height: 100%;
+}
+#tv_chart_container {
+height: 100%;
+}
+
+/*************Ashvini***********/
+.ml-0{
+  margin-left: 0px !important;
+}
+.market-input{
+  background-color: transparent !important;
+  border: none !important;
+  border-width: 0px 0px 0px 0px;
+  border-radius: 0px;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: white !important;
+}
+.market-input:focus, .market-input:hover, .market-input:active{
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+.market-input::placeholder{
+  color: white !important;
+}
+.custom-market-btn{
+  background: transparent;
+  color: #dddddd;
+  padding: 0px 9px !important;
+}
+.custom-market-btn:focus, .custom-market-btn:hover{
+  background: transparent !important;
+  color: #dddddd !important;
+  padding: 0px 9px !important;
+}
+.custom-nav-tabs>li.active>a, .custom-nav-tabs>li.active>a:focus, .custom-nav-tabs>li.active>a:hover{
+  background-color: transparent !important;
+  color: #055cb8 !important;
+  border: 1px #055cb8 solid !important;
+  border-width: 0px 0px 1px 0px !important;
+  text-transform: uppercase;
+  padding: 5px 8px 2px 8px !important;
+}
+.custom-nav-tabs>li>a{
+  background: transparent;
+  color: #b7bac4;
+  border: 1px #ffffff40 solid !important;
+  border-width: 0px 0px 1px 0px !important;
+  text-transform: uppercase;
+  padding: 5px 8px 2px 8px !important;
+}
+.custom-nav-tabs li.active, .custom-nav-tabs li{
+  background-color: transparent !important;
+  padding:0px !important;
+}
+
+
+.custom-nav-tabs>li>a{
+  font-size: 10px;
+}
+.custom-nav-tabs>li>a:hover{
+  border-color:#055cb8 !important;
+  color: #055cb8;
+  border-width: 0px 0px 1px 0px !important;
+  padding: 5px 8px 2px 8px !important;
+}
+.custom-nav-tabs>li>a:focus, .custom-nav-tabs>li>a:hover{
+  text-decoration: none !important;
+  background-color:transparent !important;
+}
+.custom-nav-tabs{
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18) !important;
+}
+.custom-market-tbl{
+  font-size:8px !important;
+}
+.custom-market-tbl tbody tr td, .custom-market-tbl thead tr th{
+  padding:3px;
+}
+.custom-market-tbl>thead>tr>th, .custom-market-tbl>tbody>tr>th{
+  border-bottom: 1px rgba(255, 255, 255, 0.18) solid !important;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.custom-text{
+  margin: 10px 0px;
+  border: 1px rgba(255, 255, 255, 0.18) solid;
+}
+.custom-text .form-control{
+  background: #090c13;
+  border: none;
+}
+.custom-text .input-group-addon{
+  background: #090c13;
+  border: none;
+  font-size: 12px;
+}
+.group-2JyOhh7Z-{
+  background-color: #171e2e !important;
+}
+.buy-btc-btn{
+  background:#1eb81e !important;
+  color: white !important;
+}
+.buy-btc-btn-pink{
+  background: #ec1f6e !important;
+  color: white!important;
+}
+.text-white{
+  color: white !important;
+}
+.checkbox-inline, .radio-inline{
+  padding-left: 18px !important;
+  font-size: 14px !important;
+}
+.checkbox-inline+.checkbox-inline, .radio-inline+.radio-inline{
+  margin-left: 0px !important;
+}
+.p-0{
+  padding: 0px !important;
+}
+.px-5{
+  padding: 0px 5px !important;
+}
+.mlr-5{
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.mt-5{
+  margin-top: 5px !important;
+}
+.volume {
+font-size: 9px !important;
+color:#626772;
+font-weight: bolder;
+}
+.time {
+font-size: 9px !important;
+color:#383d4c;
+font-weight: bolder;
+text-align: right;
+}
+.fs-11{
+  font-size: 11px;
+}
+#ticker .last{
+  border-bottom: 1px rgba(255, 255, 255, 0.18) solid !important;
+  border-top: 1px rgba(255, 255, 255, 0.18) solid !important;
+  margin-right: 10px;
+}
+table{
+  width: 100%;
+  max-width: 100%;
+}
+.text-right{
+  text-align: right;
+}
+/*Custom Rdio button design*/
+.custom-rdo:checked,
+.custom-rdo:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+.custom-rdo:checked + label,
+.custom-rdo:not(:checked) + label
+{
+  position: relative;
+  padding-left: 19px;
+  font-size: 12px;
+  cursor: pointer;
+  line-height: 16px;
+  display: inline-block;
+  color: #747985;
+}
+.custom-rdo:checked + label:before,
+.custom-rdo:not(:checked) + label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 14px;
+  height: 14px;
+  border: 1px solid #ddd;
+  border-radius: 100%;
+  background: #090c13;
+}
+.custom-rdo:checked + label:after,
+.custom-rdo:not(:checked) + label:after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: #0079f1;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.custom-rdo:not(:checked) + label:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+.custom-rdo:checked + label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+.chart-controls-bar{
+  display: none !important;
+}

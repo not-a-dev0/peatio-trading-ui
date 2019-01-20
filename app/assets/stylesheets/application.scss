@@ -13,8 +13,12 @@
 @import 'font-awesome';
 @import 'csshake.min';
 
+/*---------------Trading css---------------*/
 
-@import 'layouts/positions';
+
+@import 'custom';
+
+
 @import 'layouts/basic';
 
 /* basic layout
@@ -690,3 +694,4 @@ table {
 .panel-width {
   width: 100%
 }
+
