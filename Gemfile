@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '~> 5.1.5'
-gem 'puma', '~> 3.7'
+gem 'puma', '~> 4.3', '>= 4.3.8'
 gem 'figaro', '~> 1.1'
 gem 'http_accept_language', '~> 2.1'
 gem 'sass-rails', '~> 5.0'
