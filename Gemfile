@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 5.1.5'
+gem 'rails', '~> 5.2.8', '>= 5.2.8.1'
 gem 'puma', '~> 3.7'
 gem 'figaro', '~> 1.1'
 gem 'http_accept_language', '~> 2.1'
