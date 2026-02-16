@@ -14,7 +14,7 @@ gem 'bourbon', '~> 4.3'
 gem 'momentjs-rails', '~> 2.17'
 gem 'mini_racer', '~> 0.1', require: false
 gem 'ejs','~> 1.1'
-gem 'faraday', '~> 0.12'
+gem 'faraday', '~> 2.14', '>= 2.14.1'
 gem 'sprockets', '~>  3.7.2'
 
 group :development do
